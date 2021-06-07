@@ -1,0 +1,13 @@
+alkalmazás kezdőoldala: az alkalmazás kezdőoldalán a Global feed-ben létező blogok megtekinthetőek regisztráció, bejelentkezés nélkül.
+regisztráció: az alkalmazásba be lehet regisztrálni felhasználónév, emailcím és jelszó megadásával.
+bejelentkezés: az alkalmazásba a regisztrált felhasználó bejelentkezhet emailcím és jelszó megadásával.
+kijelentkezés: az alkalmazásból kijelentkezhet az előzőleg bejelentkezett felhasználó.
+blogbejegyzés létrehozása: a bejelentkezett felhasználó új blogbejegyzést hozhat létre az Article title, What's this article about?, Write your article (in markdown), Enter tags mezők kitöltésével.
+blogbejegyzés szerkesztése: a bejelentkezett felhasználó szerkesztheti a már létező blogbejegyzését az Article title, What's this article about?, Write your article (in markdown), Enter tags mezők adatainak változtatásával.
+blogbejegyzés törlése: a bejelentkezett felhasználó törölheti a már létező blogbejegyzését.
+blogbejegyzés részleteinek megtekintése: felhasználó megtekintheti a kiválasztott blogbejegyzés tartalmát.
+blogbejegyzéshez címke (tag) hozzáadása: bejelentkezett felhasználó egy új blogbejegyzés létrehozásakor, vagy létező blogbejegyzés szerkesztésekor tag-eket adhat hozzá a bejegyzéséhez.
+blogbejegyzések listájának megtekintése: felhasználó megtekintheti az adatbázisban eltárolt blogbejegyzések listáját.
+címkék listájának megtekintése és címke kiválasztása:felhasználó az adatbázisban létező tag-ek listáját megtekintheti és kiválaszthat abból egyet, ami az általa jelölt blogbejegyzés(ekre) mutat.
+blogbejegyzés kedvelése/nem kedvelése: bejelentkezett felhasználó a létező blogbejegyzésekből kiválasztott bejegyzést kedvelheti vagy visszavonhatja a kedvelést.
+követés: a bejelentkezett felhasználó más felhasználók blogbejegyzését kiválasztva, annak nevére kattintva követni tudja a másik felhasználót és annak blogbejegyzéseit gyűjteni tudja a "Your feed" listában. A követést meg tudja szüntetni, ez esetben törlődik a bejegyzés a "Your feed" listából.
