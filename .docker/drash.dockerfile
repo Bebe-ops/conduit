@@ -1,10 +1,9 @@
-FROM debian:stable-slim
+FROM node:12
 
 RUN apt update -y \
   && apt clean \
   && apt install bash curl unzip -y \
-  && apt install -y --no-install-recommends nodejs \
-  && apt install -y --no-install-recommends npm \
+  && rm -rf node_modules \
   && npm install -g npm@latest
 
 RUN curl -fsSL https://deno.land/x/install/install.sh | DENO_INSTALL=/usr/local sh -s v1.9.2

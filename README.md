@@ -5,10 +5,16 @@
 This real world example application uses Deno, Drash, Vue, Webpack, PostgreSQL,
 and docker-compose.
 
+# Rebuild the container images
+In order to rebuild images you should use --no-cache option:
+```
+docker-compose build --no-cache
+```
+
 # How to Run
 
 ```
-$ docker-compose build && docker-compose up -d
+docker-compose up -d
 ```
 
 Navigate to `localhost:1667`
