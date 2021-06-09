@@ -1,0 +1,33 @@
+magas rizikótartalmú, kritikus tesztesetek
+A001, CON_TC01_Home page megjelenése login nélkül, API teszt és felület automatizálás is, mert kritikus teszteset,mivel,ha ez nem sikeres, akkor a további tesztesetek futása sem az, továbbá az alapelemek meglétét vizsgáljuk.(Smoke teszthez)
+A002, CON_TC02_Felhasználói regisztráció helyes adatokkal, még nem létezõ felhasználói adatokkal, API teszt, mert a teszteset lépései szükségesek, alapok egy összetettebb automatizált teszt létrehozásához egy integrációs teszthez, amit a késõbbiekben regressziós tesztként is hasznosíthatunk majd.
+A003, CON_TC04_Felhasználói bejelentkezés létezõ felhasználóval, API teszt, mert (CON_TC02-vel egyezõ indoklás)
+A004, CON_TC09_Logout gomb mûködése, felület automatizálás, a logout alap funkció,fontos a munkamenet helyes megszüntetéséhez
+A005, CON_TC10-Felhasználói profil szerkesztése, API teszt és felület automatizálás, mert alap funkció, sok lépésbõl áll( egy új felhasználó létrehozásától kezdve), sok adatbevitel, több adatváltoztatás vizsgálata.
+A006, CON_TC22-Felhasználói jelszó megváltoztatása, felület tesztelés, mert alap funkció, kritikus teszteset, továbbá több lépésbõl áll.
+A007, CON_TC10_Új blogbejegyzés (minden mezõ kitöltése), API tesztelés és felület automatizálás, sok input adat bevitele miatt, a bevitelei mezõk megjelenésének és mûködésük helyességének vizsgálata.Integrációs teszt: modulok együttmûködnek e.
+A008, CON_TC_12_Cikk részletek megtekintése, felület automatizálás, alap funkciója az alkalmazásnak, hogy el is tudja olvasni a felhasználó a bejegyzés tartalmát.Integrációs teszt.
+A009, CON_TC_13_Meglévõ blogbejegyzésem szerkesztése, felület automatizálás, ismételt végrehajtást tartalmaz(TC02, TC04)
+A010, CON_TC10-13-14_tesztesetek, összevonható egy tesztbe egy variációnak-akár regressziós tesztként.
+A011, CON_TC14-Meglévõ blogbejegyzésem törlése, API teszt és felület automatizálás, mivel létre is kell hozni egy bejegyzést (TC10), ezért sok adatbevitel van.A funkció mûködésével az integrációt is ellenõrizhetjük.
+A012, CON_TC15_Címkék használata és CON_TC16_Címke feed oldal összevonásával, API teszt és felület automatizálás, ismételt végrehajtást tartalmaz, sok az adatbevitel.Adatbázis mûködésének vizsgálata, Modulok integrációjának vizsgálata.
+
+Kevésbé fontos automatizálás szempontjából
+A013, CON_TC17_BLOGBEJEGYZÉS KEDVENCKÉNT VALÓ MEGJELÖLÉSE, felület automatizálás, 2.prioritású követelmény
+
+Beviteli mezõk validációi
+Esetleg ezek összevonhatóak e egy tesztesetbe a pozitív teszteseteik utáni lépésekként?
+A014, CON_TC11_Új blogbejegyzés - üresen hagyott mezõk (figyelmeztetõ üzenet megjelenése)
+A015, CON_TC23_Felhasználói regisztráció helyes adatokkal, már létezõ felhasználói adatokkal, nem érdemes automatizálni
+A016, CON_TC03_Felhasználói regisztráció helytelen email domain névvel, nem érdemes automatizálni
+A017, CON_TC05_Felhasználói bejelentkezés nem létezõ felhasználóval, nem érdemes automatizálni
+A018, CON_TC06_Felhasználói bejelentkezés helytelen formátumú email címmel, nem érdemes automatizálni
+A019, CON_TC07_Felhasználói bejelentkezés helytelen jelszóval, nem érdemes automatizálni
+A020, CON_TC18_Blog Feed és lapozhatóság ellenõrzése, (2.prioritású a R010 követelmény), nem érdemes automatizálni
+A021, CON_TC19_Követve, 3.prioritású a hozzátartozó követelmény, nem érdemes automatizálni
+A022, CON_TC20_Követés megszüntetése, 3.prioritású a hozzátartozó követelmény, nem érdemes automatizálni
+
+Nem automatizálnám:
+CON_TC08_Logout gomb elhelyezkedése, nem érdemes, nem pontosak a követelmények
+
+
