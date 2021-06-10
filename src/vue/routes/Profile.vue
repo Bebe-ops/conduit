@@ -80,6 +80,12 @@ export default {
   mounted() {
     this.$store.dispatch("fetchProfile", this.$route.params);
   },
+  props: {
+    followed: {
+      type: String,
+      required: false
+    }
+  },
   computed: {
     ...mapGetters([
       "is_authenticated",
@@ -88,6 +94,9 @@ export default {
     ])
   },
   methods: {
+    fetchProfile() {
+      this.$store.dispatch("fetchProfile", this.params.profile.username);
+    },
     isCurrentUser() {
       if (this.user.username && this.profile.username) {
         return this.user.username === this.profile.username;
@@ -96,10 +105,10 @@ export default {
     },
     follow() {
       if (!this.is_authenticated) return;
-      this.$store.dispatch("setFollowProfile", this.$route.params);
+      this.$store.dispatch("toggleFollowAuthor", this.$route.params);
     },
     unfollow() {
-      this.$store.dispatch("setFollowProfile", this.$route.params);
+      this.$store.dispatch("toggleFollowAuthor", this.$route.params);
     }
   },
   watch: {
@@ -107,6 +116,9 @@ export default {
       if (to.params && to.params.username) {
         this.$store.dispatch("fetchProfile", to.params);
       }
+    }, 
+    followed() {
+      this.fetchProfile();
     }
   }
 };

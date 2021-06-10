@@ -10,9 +10,9 @@ import UserModel from "../models/user_model.ts";
 
 class ArticlesResource extends BaseResource {
   static paths = [
-    "/articles",
-    "/articles/:slug",
-    "/articles/:slug/favorite",
+    "/api/articles",
+    "/api/articles/:slug",
+    "/api/articles/:slug/favorite",
   ];
 
   //////////////////////////////////////////////////////////////////////////////
@@ -95,16 +95,20 @@ class ArticlesResource extends BaseResource {
     articleIds: number[],
     entities: ArticleEntity[],
   ): Promise<ArticleEntity[]> {
+    console.log("addFavoritedToEntities");
     const currentUser = await this.getCurrentUser();
     if (!currentUser) {
+      console.log(0)
       return entities;
     }
-
+    console.log(1)
     const favs: ArticlesFavoritesModel[] = await ArticlesFavoritesModel
       .whereIn("article_id", articleIds);
-
+    console.log(2)
     entities = entities.map((entity: ArticleEntity) => {
+      console.log(3)
       favs.forEach((favorite: ArticlesFavoritesModel) => {
+        
         if (entity.id === favorite.article_id) {
           if (currentUser.id === favorite.user_id) {
             entity.favorited = favorite.value;
@@ -135,6 +139,7 @@ class ArticlesResource extends BaseResource {
 
     entities.map((entity: ArticleEntity) => {
       favs.forEach((favorite: ArticlesFavoritesModel) => {
+        console.log("favorite", favorite)
         if (favorite.article_id == entity.id) {
           if (favorite.value === true) {
             entity.favoritesCount += 1;
@@ -264,8 +269,7 @@ class ArticlesResource extends BaseResource {
       inputArticle.body || "",
       inputArticle.tags || "",
     );
-    console.log("article to save:");
-    console.log(article);
+
     await article.save();
 
     if (!article) {
@@ -357,10 +361,8 @@ class ArticlesResource extends BaseResource {
   protected async getArticles(): Promise<Drash.Http.Response> {
     const articles: ArticleModel[] = await ArticleModel
       .all(await this.getQueryFilters());
-
     const articleIds: number[] = [];
     const authorIds: number[] = [];
-
     let entities: ArticleEntity[] = articles.map((article: ArticleModel) => {
       if (authorIds.indexOf(article.author_id) === -1) {
         authorIds.push(article.author_id);
@@ -368,17 +370,23 @@ class ArticlesResource extends BaseResource {
       if (articleIds.indexOf(article.id) === -1) {
         articleIds.push(article.id);
       }
+
       return article.toEntity();
     });
 
+
     entities = await this.addAuthorsToEntities(authorIds, entities);
+
     entities = await this.addFavoritesCountToEntities(articleIds, entities);
-    entities = await this.addFavoritedToEntities(articleIds, entities);
+
+    //entities = await this.addFavoritedToEntities(articleIds, entities);
+
     entities = await this.filterEntitiesByFavoritedBy(articleIds, entities);
 
     this.response.body = {
       articles: entities,
     };
+
     return this.response;
   }
 
