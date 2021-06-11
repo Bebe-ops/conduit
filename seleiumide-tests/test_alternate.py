@@ -27,29 +27,29 @@ class TestAlternate():
     assert self.driver.find_element(By.XPATH, "//h1[contains(.,\'Sign up\')]").text == "Sign up"
     elements = self.driver.find_elements(By.XPATH, "//a[contains(.,\'Have an account?\')]")
     assert len(elements) > 0
-    elements = self.driver.find_elements(By.CSS_SELECTOR, ".form-group:nth-child(1) > .form-control")
+    elements = self.driver.find_elements(By.XPATH, "//input[@type=\'text\']")
     assert len(elements) > 0
-    elements = self.driver.find_elements(By.CSS_SELECTOR, ".form-group:nth-child(2) > .form-control")
+    elements = self.driver.find_elements(By.XPATH, "(//input[@type=\'text\'])[2]")
     assert len(elements) > 0
-    elements = self.driver.find_elements(By.CSS_SELECTOR, ".form-group:nth-child(3) > .form-control")
+    elements = self.driver.find_elements(By.XPATH, "//input[@type=\'password\']")
     assert len(elements) > 0
     elements = self.driver.find_elements(By.XPATH, "//button[contains(.,\'Sign up\')]")
     assert len(elements) > 0
-    self.driver.find_element(By.XPATH, "//div[@id=\'app\']/div/div/div/div/form/fieldset/input").click()
-    self.driver.find_element(By.XPATH, "//div[@id=\'app\']/div/div/div/div/form/fieldset/input").send_keys("TesterB71011")
-    self.driver.find_element(By.XPATH, "//div[@id=\'app\']/div/div/div/div/form/fieldset[2]/input").click()
-    self.driver.find_element(By.XPATH, "//div[@id=\'app\']/div/div/div/div/form/fieldset[2]/input").send_keys("70111testerbuggie@gmail.com")
-    self.driver.find_element(By.XPATH, "//div[@id=\'app\']/div/div/div/div/form/fieldset[3]/input").click()
-    self.driver.find_element(By.XPATH, "//div[@id=\'app\']/div/div/div/div/form/fieldset[3]/input").send_keys("123ABCabc#&@{}í")
+    self.driver.find_element(By.XPATH, "//input[@type=\'text\']").click()
+    self.driver.find_element(By.XPATH, "//input[@type=\'text\']").send_keys("TesterB71011")
+    self.driver.find_element(By.XPATH, "(//input[@type=\'text\'])[2]").click()
+    self.driver.find_element(By.XPATH, "(//input[@type=\'text\'])[2]").send_keys("70111testerbuggie@gmail.com")
+    self.driver.find_element(By.XPATH, "//input[@type=\'password\']").click()
+    self.driver.find_element(By.XPATH, "//input[@type=\'password\']").send_keys("123ABCabc#&@{}í")
     self.driver.find_element(By.XPATH, "//button[contains(.,\'Sign up\')]").click()
     assert self.driver.find_element(By.CSS_SELECTOR, ".swal-title").text == "Registration failed!"
     assert self.driver.find_element(By.XPATH, "//div/div[3]").text == "Email already taken."
     self.driver.find_element(By.XPATH, "//button[contains(.,\'OK\')]").click()
-    elements = self.driver.find_elements(By.CSS_SELECTOR, ".form-group:nth-child(1) > .form-control")
+    elements = self.driver.find_elements(By.XPATH, "//input[@type=\'text\']")
     assert len(elements) > 0
-    elements = self.driver.find_elements(By.CSS_SELECTOR, ".form-group:nth-child(2) > .form-control")
+    elements = self.driver.find_elements(By.XPATH, "(//input[@type=\'text\'])[2]")
     assert len(elements) > 0
-    elements = self.driver.find_elements(By.CSS_SELECTOR, ".form-group:nth-child(3) > .form-control")
+    elements = self.driver.find_elements(By.XPATH, "//input[@type=\'password\']")
     assert len(elements) > 0
   
   def test_registrationwithaninvalidemailaddress(self):
@@ -61,45 +61,45 @@ class TestAlternate():
     assert self.driver.find_element(By.XPATH, "//h1[contains(.,\'Sign up\')]").text == "Sign up"
     elements = self.driver.find_elements(By.XPATH, "//a[contains(.,\'Have an account?\')]")
     assert len(elements) > 0
-    elements = self.driver.find_elements(By.CSS_SELECTOR, ".form-group:nth-child(1) > .form-control")
+    elements = self.driver.find_elements(By.XPATH, "//input[@type=\'text\']")
     assert len(elements) > 0
-    elements = self.driver.find_elements(By.CSS_SELECTOR, ".form-group:nth-child(2) > .form-control")
+    elements = self.driver.find_elements(By.XPATH, "(//input[@type=\'text\'])[2]")
     assert len(elements) > 0
-    elements = self.driver.find_elements(By.CSS_SELECTOR, ".form-group:nth-child(3) > .form-control")
+    elements = self.driver.find_elements(By.XPATH, "//input[@type=\'password\']")
     assert len(elements) > 0
     elements = self.driver.find_elements(By.XPATH, "//button[contains(.,\'Sign up\')]")
     assert len(elements) > 0
-    self.driver.find_element(By.XPATH, "//div[@id=\'app\']/div/div/div/div/form/fieldset/input").click()
-    self.driver.find_element(By.XPATH, "//div[@id=\'app\']/div/div/div/div/form/fieldset/input").send_keys("Testregi")
-    self.driver.find_element(By.XPATH, "//div[@id=\'app\']/div/div/div/div/form/fieldset[2]/input").click()
-    self.driver.find_element(By.XPATH, "//div[@id=\'app\']/div/div/div/div/form/fieldset[2]/input").send_keys("testregigmail.som")
-    self.driver.find_element(By.XPATH, "//div[@id=\'app\']/div/div/div/div/form/fieldset[3]/input").click()
-    self.driver.find_element(By.XPATH, "//div[@id=\'app\']/div/div/div/div/form/fieldset[3]/input").send_keys("AsAs5678")
+    self.driver.find_element(By.XPATH, "//input[@type=\'text\']").click()
+    self.driver.find_element(By.XPATH, "//input[@type=\'text\']").send_keys("Testregi")
+    self.driver.find_element(By.XPATH, "(//input[@type=\'text\'])[2]").click()
+    self.driver.find_element(By.XPATH, "(//input[@type=\'text\'])[2]").send_keys("testregigmail.som")
+    self.driver.find_element(By.XPATH, "//input[@type=\'password\']").click()
+    self.driver.find_element(By.XPATH, "//input[@type=\'password\']").send_keys("AsAs5678")
     self.driver.find_element(By.XPATH, "//button[contains(.,\'Sign up\')]").click()
     assert self.driver.find_element(By.CSS_SELECTOR, ".swal-title").text == "Registration failed!"
     assert self.driver.find_element(By.XPATH, "//div/div[3]").text == "Email must be a valid email."
     self.driver.find_element(By.XPATH, "//button[contains(.,\'OK\')]").click()
-    elements = self.driver.find_elements(By.CSS_SELECTOR, ".form-group:nth-child(1) > .form-control")
+    elements = self.driver.find_elements(By.XPATH, "//input[@type=\'text\']")
     assert len(elements) > 0
-    elements = self.driver.find_elements(By.CSS_SELECTOR, ".form-group:nth-child(2) > .form-control")
+    elements = self.driver.find_elements(By.XPATH, "(//input[@type=\'text\'])[2]")
     assert len(elements) > 0
-    elements = self.driver.find_elements(By.CSS_SELECTOR, ".form-group:nth-child(3) > .form-control")
+    elements = self.driver.find_elements(By.XPATH, "//input[@type=\'password\']")
     assert len(elements) > 0
-    self.driver.find_element(By.XPATH, "//div[@id=\'app\']/div/div/div/div/form/fieldset/input").click()
-    self.driver.find_element(By.XPATH, "//div[@id=\'app\']/div/div/div/div/form/fieldset/input").send_keys("testregi")
-    self.driver.find_element(By.XPATH, "//div[@id=\'app\']/div/div/div/div/form/fieldset[2]/input").click()
-    self.driver.find_element(By.XPATH, "//div[@id=\'app\']/div/div/div/div/form/fieldset[2]/input").send_keys("testregi@gmailcom")
-    self.driver.find_element(By.XPATH, "//div[@id=\'app\']/div/div/div/div/form/fieldset[3]/input").click()
-    self.driver.find_element(By.XPATH, "//div[@id=\'app\']/div/div/div/div/form/fieldset[3]/input").send_keys("AsAs5678")
+    self.driver.find_element(By.XPATH, "//input[@type=\'text\']").click()
+    self.driver.find_element(By.XPATH, "//input[@type=\'text\']").send_keys("testregi")
+    self.driver.find_element(By.XPATH, "(//input[@type=\'text\'])[2]").click()
+    self.driver.find_element(By.XPATH, "(//input[@type=\'text\'])[2]").send_keys("testregi@gmailcom")
+    self.driver.find_element(By.XPATH, "//input[@type=\'password\']").click()
+    self.driver.find_element(By.XPATH, "//input[@type=\'password\']").send_keys("AsAs5678")
     self.driver.find_element(By.XPATH, "//button[contains(.,\'Sign up\')]").click()
     assert self.driver.find_element(By.CSS_SELECTOR, ".swal-title").text == "Registration failed!"
     assert self.driver.find_element(By.XPATH, "//div/div[3]").text == "Email must be a valid email."
     self.driver.find_element(By.XPATH, "//button[contains(.,\'OK\')]").click()
-    elements = self.driver.find_elements(By.CSS_SELECTOR, ".form-group:nth-child(1) > .form-control")
+    elements = self.driver.find_elements(By.XPATH, "//input[@type=\'text\']")
     assert len(elements) > 0
-    elements = self.driver.find_elements(By.CSS_SELECTOR, ".form-group:nth-child(2) > .form-control")
+    elements = self.driver.find_elements(By.XPATH, "(//input[@type=\'text\'])[2]")
     assert len(elements) > 0
-    elements = self.driver.find_elements(By.CSS_SELECTOR, ".form-group:nth-child(3) > .form-control")
+    elements = self.driver.find_elements(By.XPATH, "//input[@type=\'password\']")
     assert len(elements) > 0
   
   def test_registrationwithemptyform(self):
@@ -111,25 +111,25 @@ class TestAlternate():
     assert self.driver.find_element(By.XPATH, "//h1[contains(.,\'Sign up\')]").text == "Sign up"
     elements = self.driver.find_elements(By.XPATH, "//a[contains(.,\'Have an account?\')]")
     assert len(elements) > 0
-    elements = self.driver.find_elements(By.CSS_SELECTOR, ".form-group:nth-child(1) > .form-control")
+    elements = self.driver.find_elements(By.XPATH, "//input[@type=\'text\']")
     assert len(elements) > 0
-    elements = self.driver.find_elements(By.CSS_SELECTOR, ".form-group:nth-child(2) > .form-control")
+    elements = self.driver.find_elements(By.XPATH, "(//input[@type=\'text\'])[2]")
     assert len(elements) > 0
-    elements = self.driver.find_elements(By.CSS_SELECTOR, ".form-group:nth-child(3) > .form-control")
+    elements = self.driver.find_elements(By.XPATH, "//input[@type=\'password\']")
     assert len(elements) > 0
     elements = self.driver.find_elements(By.XPATH, "//button[contains(.,\'Sign up\')]")
     assert len(elements) > 0
-    self.driver.find_element(By.XPATH, "//div[@id=\'app\']/div/div/div/div/form/fieldset/input").click()
-    self.driver.find_element(By.XPATH, "//div[@id=\'app\']/div/div/div/div/form/fieldset[2]/input").click()
-    self.driver.find_element(By.XPATH, "//div[@id=\'app\']/div/div/div/div/form/fieldset[3]/input").click()
+    self.driver.find_element(By.XPATH, "//input[@type=\'text\']").click()
+    self.driver.find_element(By.XPATH, "(//input[@type=\'text\'])[2]").click()
+    self.driver.find_element(By.XPATH, "//input[@type=\'password\']").click()
     self.driver.find_element(By.XPATH, "//button[contains(.,\'Sign up\')]").click()
     assert self.driver.find_element(By.CSS_SELECTOR, ".swal-title").text == "Registration failed!"
     assert self.driver.find_element(By.CSS_SELECTOR, ".swal-text").text == "Username field required."
     self.driver.find_element(By.XPATH, "//button[contains(.,\'OK\')]").click()
-    elements = self.driver.find_elements(By.XPATH, "//div[@id=\'app\']/div/div/div/div/form/fieldset/input")
+    elements = self.driver.find_elements(By.XPATH, "//input[@type=\'text\']")
     assert len(elements) > 0
-    elements = self.driver.find_elements(By.XPATH, "//div[@id=\'app\']/div/div/div/div/form/fieldset[2]/input")
+    elements = self.driver.find_elements(By.XPATH, "(//input[@type=\'text\'])[2]")
     assert len(elements) > 0
-    elements = self.driver.find_elements(By.XPATH, "//div[@id=\'app\']/div/div/div/div/form/fieldset[3]/input")
+    elements = self.driver.find_elements(By.XPATH, "//input[@type=\'password\']")
     assert len(elements) > 0
   

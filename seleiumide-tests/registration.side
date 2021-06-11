@@ -81,7 +81,7 @@
       "id": "b1e6be6d-1d87-454c-9cd0-f4ccb700d8ea",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=.form-group:nth-child(1) > .form-control",
+      "target": "xpath=//input[@type='text']",
       "targets": [
         ["css=.form-group:nth-child(1) > .form-control", "css:finder"],
         ["xpath=//input[@type='text']", "xpath:attributes"],
@@ -93,7 +93,7 @@
       "id": "b0646102-d9f2-446d-a419-86787ec9981a",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=.form-group:nth-child(2) > .form-control",
+      "target": "xpath=(//input[@type='text'])[2]",
       "targets": [
         ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
         ["xpath=(//input[@type='text'])[2]", "xpath:attributes"],
@@ -105,7 +105,7 @@
       "id": "8c3d0895-18b1-408c-a0d8-2ae5ae641738",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=.form-group:nth-child(3) > .form-control",
+      "target": "xpath=//input[@type='password']",
       "targets": [
         ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
         ["xpath=//input[@type='password']", "xpath:attributes"],
@@ -129,7 +129,7 @@
       "id": "4e755a8c-b8da-4544-881f-5ea8bb38f2e5",
       "comment": "",
       "command": "click",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset/input",
+      "target": "xpath=//input[@type='text']",
       "targets": [
         ["css=.form-group:nth-child(1) > .form-control", "css:finder"],
         ["xpath=//input[@type='text']", "xpath:attributes"],
@@ -141,19 +141,19 @@
       "id": "4ebdb8d6-3043-413f-b379-62207a30680c",
       "comment": "",
       "command": "type",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset/input",
+      "target": "xpath=//input[@type='text']",
       "targets": [
         ["css=.form-group:nth-child(1) > .form-control", "css:finder"],
         ["xpath=//input[@type='text']", "xpath:attributes"],
         ["xpath=//div[@id='app']/div/div/div/div/form/fieldset/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "TesterB71011"
+      "value": "TesterC"
     }, {
       "id": "5d9551b9-f76b-44f0-8ab2-0ab1a110cb41",
       "comment": "",
       "command": "click",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset[2]/input",
+      "target": "xpath=(//input[@type='text'])[2]",
       "targets": [
         ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
         ["xpath=(//input[@type='text'])[2]", "xpath:attributes"],
@@ -165,19 +165,19 @@
       "id": "55361dd1-7603-4bf1-b8e3-5504026af72b",
       "comment": "",
       "command": "type",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset[2]/input",
+      "target": "xpath=(//input[@type='text'])[2]",
       "targets": [
         ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
         ["xpath=(//input[@type='text'])[2]", "xpath:attributes"],
         ["xpath=//div[@id='app']/div/div/div/div/form/fieldset[2]/input", "xpath:idRelative"],
         ["xpath=//fieldset[2]/input", "xpath:position"]
       ],
-      "value": "70111testerbuggie@gmail.com"
+      "value": "Ctesterbuggie@gmail.com"
     }, {
       "id": "3933fa64-8cf3-44ac-8021-e88e77f69d0d",
       "comment": "",
       "command": "click",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset[3]/input",
+      "target": "xpath=//input[@type='password']",
       "targets": [
         ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
         ["xpath=//input[@type='password']", "xpath:attributes"],
@@ -189,7 +189,7 @@
       "id": "23895125-34b1-433a-803f-35de6d04fe10",
       "comment": "",
       "command": "type",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset[3]/input",
+      "target": "xpath=//input[@type='password']",
       "targets": [
         ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
         ["xpath=//input[@type='password']", "xpath:attributes"],
@@ -244,7 +244,7 @@
       "id": "197ba478-c85d-42f2-9b22-e2fd892897bf",
       "comment": "",
       "command": "verifyElementPresent",
-      "target": "xpath=//a[contains(.,'TesterB71011')]",
+      "target": "xpath=//a[contains(.,'TesterC')]",
       "targets": [
         ["linkText=TesterB7101", "linkText"],
         ["css=.nav-item:nth-child(4) > .nav-link", "css:finder"],
@@ -378,7 +378,7 @@
       "id": "c1ae6e1f-9390-41a0-95f5-a2b17d2cc660",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=.form-group:nth-child(1) > .form-control",
+      "target": "xpath=//input[@type='text']",
       "targets": [
         ["css=.form-group:nth-child(1) > .form-control", "css:finder"],
         ["xpath=//input[@type='text']", "xpath:attributes"],
@@ -390,7 +390,7 @@
       "id": "be05d997-1be4-4d77-8179-516bd8b7d7a8",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=.form-group:nth-child(2) > .form-control",
+      "target": "xpath=(//input[@type='text'])[2]",
       "targets": [
         ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
         ["xpath=(//input[@type='text'])[2]", "xpath:attributes"],
@@ -402,7 +402,7 @@
       "id": "8d38f142-31ba-42c1-a48f-3eb12c044f55",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=.form-group:nth-child(3) > .form-control",
+      "target": "xpath=//input[@type='password']",
       "targets": [
         ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
         ["xpath=//input[@type='password']", "xpath:attributes"],
@@ -426,7 +426,7 @@
       "id": "0015fe62-14ff-4994-b2c6-d2fe807a008d",
       "comment": "",
       "command": "click",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset/input",
+      "target": "xpath=//input[@type='text']",
       "targets": [
         ["css=.form-group:nth-child(1) > .form-control", "css:finder"],
         ["xpath=//input[@type='text']", "xpath:attributes"],
@@ -438,7 +438,7 @@
       "id": "cd7b2083-cdcc-4719-8fe4-37f46a46277e",
       "comment": "",
       "command": "type",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset/input",
+      "target": "xpath=//input[@type='text']",
       "targets": [
         ["css=.form-group:nth-child(1) > .form-control", "css:finder"],
         ["xpath=//input[@type='text']", "xpath:attributes"],
@@ -450,7 +450,7 @@
       "id": "c851963c-8555-4f85-b29c-00f81010e9b5",
       "comment": "",
       "command": "click",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset[2]/input",
+      "target": "xpath=(//input[@type='text'])[2]",
       "targets": [
         ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
         ["xpath=(//input[@type='text'])[2]", "xpath:attributes"],
@@ -462,7 +462,7 @@
       "id": "7bea2542-bd37-4cda-85f3-44d72386222c",
       "comment": "",
       "command": "type",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset[2]/input",
+      "target": "xpath=(//input[@type='text'])[2]",
       "targets": [
         ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
         ["xpath=(//input[@type='text'])[2]", "xpath:attributes"],
@@ -474,7 +474,7 @@
       "id": "25b16ef4-d003-4b7f-b0dc-7eed8a2e4e70",
       "comment": "",
       "command": "click",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset[3]/input",
+      "target": "xpath=//input[@type='password']",
       "targets": [
         ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
         ["xpath=//input[@type='password']", "xpath:attributes"],
@@ -486,7 +486,7 @@
       "id": "5fb2c534-d8e1-4947-9ba7-424143b364b4",
       "comment": "",
       "command": "type",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset[3]/input",
+      "target": "xpath=//input[@type='password']",
       "targets": [
         ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
         ["xpath=//input[@type='password']", "xpath:attributes"],
@@ -541,7 +541,7 @@
       "id": "23dd6b33-c1ec-41a5-ba6a-dae2bac0cb1a",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=.form-group:nth-child(1) > .form-control",
+      "target": "xpath=//input[@type='text']",
       "targets": [
         ["css=.form-group:nth-child(1) > .form-control", "css:finder"],
         ["xpath=//input[@type='text']", "xpath:attributes"],
@@ -553,7 +553,7 @@
       "id": "f81f61a4-ca8f-4415-8812-eb20593b8ab1",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=.form-group:nth-child(2) > .form-control",
+      "target": "xpath=(//input[@type='text'])[2]",
       "targets": [
         ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
         ["xpath=(//input[@type='text'])[2]", "xpath:attributes"],
@@ -565,7 +565,7 @@
       "id": "df1ad4ff-621a-4a40-bb64-ca311436e8ae",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=.form-group:nth-child(3) > .form-control",
+      "target": "xpath=//input[@type='password']",
       "targets": [
         ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
         ["xpath=//input[@type='password']", "xpath:attributes"],
@@ -652,7 +652,7 @@
       "id": "2600d22d-c381-43bc-9567-db57ad309ebe",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=.form-group:nth-child(1) > .form-control",
+      "target": "xpath=//input[@type='text']",
       "targets": [
         ["css=.form-group:nth-child(1) > .form-control", "css:finder"],
         ["xpath=//input[@type='text']", "xpath:attributes"],
@@ -664,7 +664,7 @@
       "id": "69df0446-a9f7-463b-ae94-7f4e08e4ba51",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=.form-group:nth-child(2) > .form-control",
+      "target": "xpath=(//input[@type='text'])[2]",
       "targets": [
         ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
         ["xpath=(//input[@type='text'])[2]", "xpath:attributes"],
@@ -676,7 +676,7 @@
       "id": "011073a7-6161-4a58-bb9c-71011e33fdb9",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=.form-group:nth-child(3) > .form-control",
+      "target": "xpath=//input[@type='password']",
       "targets": [
         ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
         ["xpath=//input[@type='password']", "xpath:attributes"],
@@ -700,7 +700,7 @@
       "id": "e01652ff-69f4-4ecc-9f60-1bcd6c21d5bc",
       "comment": "",
       "command": "click",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset/input",
+      "target": "xpath=//input[@type='text']",
       "targets": [
         ["css=.form-group:nth-child(1) > .form-control", "css:finder"],
         ["xpath=//input[@type='text']", "xpath:attributes"],
@@ -712,7 +712,7 @@
       "id": "aadf4f15-0712-476a-bf1c-e933d6bf4028",
       "comment": "",
       "command": "type",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset/input",
+      "target": "xpath=//input[@type='text']",
       "targets": [
         ["css=.form-group:nth-child(1) > .form-control", "css:finder"],
         ["xpath=//input[@type='text']", "xpath:attributes"],
@@ -724,7 +724,7 @@
       "id": "49c04304-0407-492f-b63a-0cefeb84f915",
       "comment": "",
       "command": "click",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset[2]/input",
+      "target": "xpath=(//input[@type='text'])[2]",
       "targets": [
         ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
         ["xpath=(//input[@type='text'])[2]", "xpath:attributes"],
@@ -736,7 +736,7 @@
       "id": "1d64ee8a-8e81-40c2-bd11-30dfefa2ff70",
       "comment": "",
       "command": "type",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset[2]/input",
+      "target": "xpath=(//input[@type='text'])[2]",
       "targets": [
         ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
         ["xpath=(//input[@type='text'])[2]", "xpath:attributes"],
@@ -748,7 +748,7 @@
       "id": "44966504-750e-45cb-8542-b5b5df51ca1a",
       "comment": "",
       "command": "click",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset[3]/input",
+      "target": "xpath=//input[@type='password']",
       "targets": [
         ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
         ["xpath=//input[@type='password']", "xpath:attributes"],
@@ -760,7 +760,7 @@
       "id": "110cbfa7-1041-4817-aae3-85fed1712765",
       "comment": "",
       "command": "type",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset[3]/input",
+      "target": "xpath=//input[@type='password']",
       "targets": [
         ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
         ["xpath=//input[@type='password']", "xpath:attributes"],
@@ -815,7 +815,7 @@
       "id": "fb47add9-e9cf-47b1-941b-e96e55285a53",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=.form-group:nth-child(1) > .form-control",
+      "target": "xpath=//input[@type='text']",
       "targets": [
         ["css=.form-group:nth-child(1) > .form-control", "css:finder"],
         ["xpath=//input[@type='text']", "xpath:attributes"],
@@ -827,7 +827,7 @@
       "id": "9691ab6f-c7ce-47ab-9ed6-67cb2d6173b4",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=.form-group:nth-child(2) > .form-control",
+      "target": "xpath=(//input[@type='text'])[2]",
       "targets": [
         ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
         ["xpath=(//input[@type='text'])[2]", "xpath:attributes"],
@@ -839,7 +839,7 @@
       "id": "af161386-fff2-4fb7-8ff7-f2b225f731f7",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=.form-group:nth-child(3) > .form-control",
+      "target": "xpath=//input[@type='password']",
       "targets": [
         ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
         ["xpath=//input[@type='password']", "xpath:attributes"],
@@ -851,7 +851,7 @@
       "id": "eaa0db51-ecef-4994-ac60-62b94a25ea35",
       "comment": "",
       "command": "click",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset/input",
+      "target": "xpath=//input[@type='text']",
       "targets": [
         ["css=.form-group:nth-child(1) > .form-control", "css:finder"],
         ["xpath=//input[@type='text']", "xpath:attributes"],
@@ -863,7 +863,7 @@
       "id": "9b38a32d-e7e7-431f-b63c-7717aeb7773a",
       "comment": "",
       "command": "type",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset/input",
+      "target": "xpath=//input[@type='text']",
       "targets": [
         ["css=.form-group:nth-child(1) > .form-control", "css:finder"],
         ["xpath=//input[@type='text']", "xpath:attributes"],
@@ -875,7 +875,7 @@
       "id": "79cb4928-56ad-4f58-a324-b1776205fab2",
       "comment": "",
       "command": "click",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset[2]/input",
+      "target": "xpath=(//input[@type='text'])[2]",
       "targets": [
         ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
         ["xpath=(//input[@type='text'])[2]", "xpath:attributes"],
@@ -887,7 +887,7 @@
       "id": "df7324f2-549b-4bb4-80ce-bd9a34f3ffae",
       "comment": "",
       "command": "type",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset[2]/input",
+      "target": "xpath=(//input[@type='text'])[2]",
       "targets": [
         ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
         ["xpath=(//input[@type='text'])[2]", "xpath:attributes"],
@@ -899,7 +899,7 @@
       "id": "7950831f-4920-46e0-a80f-5b4a0545be08",
       "comment": "",
       "command": "click",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset[3]/input",
+      "target": "xpath=//input[@type='password']",
       "targets": [
         ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
         ["xpath=//input[@type='password']", "xpath:attributes"],
@@ -911,7 +911,7 @@
       "id": "7a7081b5-9cf7-4a17-9d6d-ca13e2dbae25",
       "comment": "",
       "command": "type",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset[3]/input",
+      "target": "xpath=//input[@type='password']",
       "targets": [
         ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
         ["xpath=//input[@type='password']", "xpath:attributes"],
@@ -966,7 +966,7 @@
       "id": "f29d2b3d-ef55-48d7-9e90-6e9b331db095",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=.form-group:nth-child(1) > .form-control",
+      "target": "xpath=//input[@type='text']",
       "targets": [
         ["css=.form-group:nth-child(1) > .form-control", "css:finder"],
         ["xpath=//input[@type='text']", "xpath:attributes"],
@@ -978,7 +978,7 @@
       "id": "09bd3ca9-0709-426a-902f-28972a09355e",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=.form-group:nth-child(2) > .form-control",
+      "target": "xpath=(//input[@type='text'])[2]",
       "targets": [
         ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
         ["xpath=(//input[@type='text'])[2]", "xpath:attributes"],
@@ -990,7 +990,7 @@
       "id": "b4d4dd12-a386-4ab2-82b1-8c1927e049c1",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=.form-group:nth-child(3) > .form-control",
+      "target": "xpath=//input[@type='password']",
       "targets": [
         ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
         ["xpath=//input[@type='password']", "xpath:attributes"],
@@ -1077,7 +1077,7 @@
       "id": "e17d1027-f389-4b64-9c5e-8196bd79d779",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=.form-group:nth-child(1) > .form-control",
+      "target": "xpath=//input[@type='text']",
       "targets": [
         ["css=.form-group:nth-child(1) > .form-control", "css:finder"],
         ["xpath=//input[@type='text']", "xpath:attributes"],
@@ -1089,7 +1089,7 @@
       "id": "ef05efc3-93a9-47a9-af7b-9760a3ba4fb0",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=.form-group:nth-child(2) > .form-control",
+      "target": "xpath=(//input[@type='text'])[2]",
       "targets": [
         ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
         ["xpath=(//input[@type='text'])[2]", "xpath:attributes"],
@@ -1101,7 +1101,7 @@
       "id": "afea6c8a-a2d7-434b-b29b-85b967ac6127",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=.form-group:nth-child(3) > .form-control",
+      "target": "xpath=//input[@type='password']",
       "targets": [
         ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
         ["xpath=//input[@type='password']", "xpath:attributes"],
@@ -1125,7 +1125,7 @@
       "id": "d1469125-bd54-46b8-8d2e-f237f1c92931",
       "comment": "",
       "command": "click",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset/input",
+      "target": "xpath=//input[@type='text']",
       "targets": [
         ["css=.form-group:nth-child(1) > .form-control", "css:finder"],
         ["xpath=//input[@type='text']", "xpath:attributes"],
@@ -1137,7 +1137,7 @@
       "id": "460f892e-e43f-4998-bfe6-c1cf81a532de",
       "comment": "",
       "command": "click",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset[2]/input",
+      "target": "xpath=(//input[@type='text'])[2]",
       "targets": [
         ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
         ["xpath=(//input[@type='text'])[2]", "xpath:attributes"],
@@ -1149,7 +1149,7 @@
       "id": "c60d04bd-64de-45a5-ac47-db87395cf774",
       "comment": "",
       "command": "click",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset[3]/input",
+      "target": "xpath=//input[@type='password']",
       "targets": [
         ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
         ["xpath=//input[@type='password']", "xpath:attributes"],
@@ -1204,7 +1204,7 @@
       "id": "52219068-d7ae-4e1f-aa77-3038ce14a464",
       "comment": "",
       "command": "verifyElementPresent",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset/input",
+      "target": "xpath=//input[@type='text']",
       "targets": [
         ["css=.form-group:nth-child(1) > .form-control", "css:finder"],
         ["xpath=//input[@type='text']", "xpath:attributes"],
@@ -1216,7 +1216,7 @@
       "id": "60f00f8a-793d-47af-816d-d59be87c4e2f",
       "comment": "",
       "command": "verifyElementPresent",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset[2]/input",
+      "target": "xpath=(//input[@type='text'])[2]",
       "targets": [
         ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
         ["xpath=(//input[@type='text'])[2]", "xpath:attributes"],
@@ -1228,7 +1228,7 @@
       "id": "c41dd336-cfef-47fd-af4a-96ad1db527c7",
       "comment": "",
       "command": "verifyElementPresent",
-      "target": "xpath=//div[@id='app']/div/div/div/div/form/fieldset[3]/input",
+      "target": "xpath=//input[@type='password']",
       "targets": [
         ["css=.form-group:nth-child(3) > .form-control", "css:finder"],
         ["xpath=//input[@type='password']", "xpath:attributes"],
