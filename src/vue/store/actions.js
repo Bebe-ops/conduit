@@ -220,6 +220,8 @@ export default {
         })
         .then((response) => {
           console.log("Profile fetched successfully. Setting profile.");
+          context.dispatch("unsetProfile");
+          console.log(response)
           context.dispatch("setProfile", response.data.profile);
         })
         .catch((response) => {
@@ -374,7 +376,7 @@ export default {
     });
   },
 
-  toggleFollowAuthor(context, params) {
+  followAuthor(context, params) {
     console.log(`Handling action: toggleFollowAuthor (${params.action})`);
     return new Promise((resolve) => {
       axios
@@ -382,12 +384,33 @@ export default {
           user_id: context.getters.user.id,
         })
         .then(async (response) => {
-          console.log("toggleFollowAuthor successful.");
-          context.dispatch("setProfile", params.username);
+          console.log("followAuthor successful.");
+          context.dispatch("setProfile", response.data.profile);
+
         })
         .catch((error) => {
           console.log(error);
-          console.log("toggleFollowAuthor unsuccessful.");
+          console.log("followAuthor unsuccessful.");
+          resolve(error.response);
+        });
+    });
+  },
+
+  unfollowAuthor(context, params) {
+    console.log(`Handling action: toggleFollowAuthor (${params.action})`);
+    return new Promise((resolve) => {
+      axios
+        .delete(`/api/profiles/${params.username}/follow`, { data: {
+          user_id: context.getters.user.id,
+        }})
+        .then(async (response) => {
+          console.log("unfollowAuthor successful.");
+          context.dispatch("setProfile", response.data.profile);
+
+        })
+        .catch((error) => {
+          console.log(error);
+          console.log("ufollowAuthor unsuccessful.");
           resolve(error.response);
         });
     });
@@ -406,6 +429,7 @@ export default {
   unsetProfile(context) {
     context.commit("setProfile", userDefault);
   },
+
 
   updateArticle(context, article) {
     console.log("Handling action: updateArticle");
