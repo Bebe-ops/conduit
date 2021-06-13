@@ -10,7 +10,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
-class TestAlternate():
+class Test4Alternatelogin():
   def setup_method(self, method):
     self.driver = webdriver.Chrome()
     self.vars = {}
@@ -127,7 +127,7 @@ class TestAlternate():
     elements = self.driver.find_elements(By.XPATH, "//button[contains(.,\'Sign in\')]")
     assert len(elements) > 0
     self.driver.find_element(By.XPATH, "//input[@type=\'text\']").click()
-    self.driver.find_element(By.XPATH, "//input[@type=\'text\']").send_keys("chesterbuggie@gmail.com")
+    self.driver.find_element(By.XPATH, "//input[@type=\'text\']").send_keys("Dtesterbuggie@gmail.com")
     self.driver.find_element(By.XPATH, "//input[@type=\'password\']").click()
     self.driver.find_element(By.XPATH, "//input[@type=\'password\']").send_keys("76AsdjdjdB")
     self.driver.find_element(By.XPATH, "//button[contains(.,\'Sign in\')]").click()
@@ -139,7 +139,7 @@ class TestAlternate():
     elements = self.driver.find_elements(By.XPATH, "//input[@type=\'password\']")
     assert len(elements) > 0
     value = self.driver.find_element(By.XPATH, "//input[@type=\'text\']").get_attribute("value")
-    assert value == "chesterbuggie@gmail.com"
+    assert value == "Dtesterbuggie@gmail.com"
     value = self.driver.find_element(By.XPATH, "//input[@type=\'password\']").get_attribute("value")
     assert value == "76AsdjdjdB"
     self.driver.find_element(By.LINK_TEXT, "conduit").click()

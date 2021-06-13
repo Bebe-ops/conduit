@@ -1344,7 +1344,7 @@
         ["xpath=//div[@id='app']/div/div/div/div/form/fieldset/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "chesterbuggie@gmail.com"
+      "value": "Dtesterbuggie@gmail.com"
     }, {
       "id": "8d9f7689-0829-482f-9b14-668e2f200e77",
       "comment": "",
@@ -1447,7 +1447,7 @@
         ["xpath=//div[@id='app']/div/div/div/div/form/fieldset/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "chesterbuggie@gmail.com"
+      "value": "Dtesterbuggie@gmail.com"
     }, {
       "id": "85025989-ca8e-4645-81e4-1b2d5fabbee7",
       "comment": "",
@@ -1710,14 +1710,14 @@
   }],
   "suites": [{
     "id": "af3fc1f6-37ff-49c4-ae78-6a931a14d0d2",
-    "name": "Base",
+    "name": "3.Base-login",
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
     "tests": ["b08adeca-c0ff-4e22-bdfd-c4a53949926f", "5e9a728e-8603-4a83-a1e8-3fb3fe522bf9"]
   }, {
     "id": "5713ae53-de8a-4667-bb00-904e8a5eb044",
-    "name": "Alternate",
+    "name": "4.Alternate-login",
     "persistSession": false,
     "parallel": false,
     "timeout": 300,

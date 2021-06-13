@@ -780,11 +780,11 @@
   }],
   "suites": [{
     "id": "21548d08-22c5-493e-9816-593314acc7fb",
-    "name": "Default Suite",
+    "name": "5.Post",
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["1eee9ed0-950b-4afb-8488-0518d366b3d0"]
+    "tests": ["1eee9ed0-950b-4afb-8488-0518d366b3d0", "150d3fa7-1e84-4816-8825-f408248daafb"]
   }],
   "urls": ["http://localhost:1667/"],
   "plugins": []

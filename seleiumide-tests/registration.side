@@ -275,7 +275,7 @@
       ],
       "value": ""
     }, {
-      "id": "50aaff55-3835-4199-8acb-482a5f310fa8",
+      "id": "072d5666-a0d3-4792-8e82-ade076c4aa87",
       "comment": "",
       "command": "close",
       "target": "/",
@@ -532,7 +532,7 @@
       ],
       "value": ""
     }, {
-      "id": "ee1dad66-8168-4c8f-88ec-8e96f71e4818",
+      "id": "2b96a551-d6e4-4e8e-b68b-dd9ef8bf402d",
       "comment": "",
       "command": "close",
       "target": "/",
@@ -904,7 +904,7 @@
       ],
       "value": ""
     }, {
-      "id": "272ee767-78a1-46b1-823e-d13f4fe3b083",
+      "id": "baf5866f-3c73-41bf-bfde-b0c601ff08a4",
       "comment": "",
       "command": "close",
       "target": "/",
@@ -1125,7 +1125,7 @@
       ],
       "value": ""
     }, {
-      "id": "729daa24-9a9e-4684-9f7a-78ed5087d250",
+      "id": "ab9e8c82-5cc6-43ad-9828-4e086fc0261b",
       "comment": "",
       "command": "close",
       "target": "/",
@@ -1135,14 +1135,14 @@
   }],
   "suites": [{
     "id": "af3fc1f6-37ff-49c4-ae78-6a931a14d0d2",
-    "name": "Base",
+    "name": "1.Base-reg",
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
     "tests": ["b08adeca-c0ff-4e22-bdfd-c4a53949926f"]
   }, {
     "id": "5713ae53-de8a-4667-bb00-904e8a5eb044",
-    "name": "Alternate",
+    "name": "2.Alternate-reg",
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
