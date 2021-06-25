@@ -1,0 +1,254 @@
+{
+  "c8b7ddd0ff315ad65b23fdfcea736009" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "87991442b75651e1",
+      "reportUrl" : "https://Bebe-ops.github.io/conduit/7//#testresult/87991442b75651e1",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally.\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)",
+      "time" : {
+        "start" : 1624635373279,
+        "stop" : 1624635373279,
+        "duration" : 0
+      }
+    } ]
+  },
+  "ef80d5470d53fb60ac1c1843eb6b7ec3" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "30ddcec3fc172574",
+      "reportUrl" : "https://Bebe-ops.github.io/conduit/7//#testresult/30ddcec3fc172574",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally.\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)",
+      "time" : {
+        "start" : 1624635371851,
+        "stop" : 1624635371851,
+        "duration" : 0
+      }
+    } ]
+  },
+  "382f81f2f1587202463bcbb2ebc02a32" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a3234b0be9bdffda",
+      "reportUrl" : "https://Bebe-ops.github.io/conduit/7//#testresult/a3234b0be9bdffda",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally.\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)",
+      "time" : {
+        "start" : 1624635366939,
+        "stop" : 1624635366939,
+        "duration" : 0
+      }
+    } ]
+  },
+  "e3b9afb9f5d27e5b6fa45b974d22e0ab" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "e73d99e3318c2c62",
+      "reportUrl" : "https://Bebe-ops.github.io/conduit/7//#testresult/e73d99e3318c2c62",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally.\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)",
+      "time" : {
+        "start" : 1624635376029,
+        "stop" : 1624635376029,
+        "duration" : 0
+      }
+    } ]
+  },
+  "450a7a2595d79867199fa31edece40e5" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "d4b11960144e1727",
+      "reportUrl" : "https://Bebe-ops.github.io/conduit/7//#testresult/d4b11960144e1727",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally.\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)",
+      "time" : {
+        "start" : 1624635370644,
+        "stop" : 1624635370644,
+        "duration" : 0
+      }
+    } ]
+  },
+  "753a03cf30d19c046f0118d773a67f99" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "607125a2aad4e102",
+      "reportUrl" : "https://Bebe-ops.github.io/conduit/7//#testresult/607125a2aad4e102",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally.\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)",
+      "time" : {
+        "start" : 1624635374802,
+        "stop" : 1624635374802,
+        "duration" : 0
+      }
+    } ]
+  },
+  "7bf47fb0708e2d2e06e8088ab9cf073c" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "c13ebc582d1f585e",
+      "reportUrl" : "https://Bebe-ops.github.io/conduit/7//#testresult/c13ebc582d1f585e",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally.\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)",
+      "time" : {
+        "start" : 1624635374569,
+        "stop" : 1624635374569,
+        "duration" : 0
+      }
+    } ]
+  },
+  "6c6d88345a6f764c6a7d0dc824611ab4" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "ad2515db95330012",
+      "reportUrl" : "https://Bebe-ops.github.io/conduit/7//#testresult/ad2515db95330012",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally.\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)",
+      "time" : {
+        "start" : 1624635365673,
+        "stop" : 1624635365673,
+        "duration" : 0
+      }
+    } ]
+  },
+  "a78c613b58cdf5992378ba1e3fb8cf06" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "290cc32d82ce0b56",
+      "reportUrl" : "https://Bebe-ops.github.io/conduit/7//#testresult/290cc32d82ce0b56",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally.\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)",
+      "time" : {
+        "start" : 1624635372071,
+        "stop" : 1624635372071,
+        "duration" : 0
+      }
+    } ]
+  },
+  "29f00ce3b9762031f1ea4e95deeebd19" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "58d9c39acbfa46f3",
+      "reportUrl" : "https://Bebe-ops.github.io/conduit/7//#testresult/58d9c39acbfa46f3",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally.\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)",
+      "time" : {
+        "start" : 1624635369430,
+        "stop" : 1624635369430,
+        "duration" : 0
+      }
+    } ]
+  },
+  "186f3fc8d9051fc0d2fb8cb39844b558" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "6da6ce58fd17c63e",
+      "reportUrl" : "https://Bebe-ops.github.io/conduit/7//#testresult/6da6ce58fd17c63e",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally.\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)",
+      "time" : {
+        "start" : 1624635368150,
+        "stop" : 1624635368150,
+        "duration" : 0
+      }
+    } ]
+  },
+  "80441c3d7316b7add38c623a6fadf737" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a28a8b4081d05348",
+      "reportUrl" : "https://Bebe-ops.github.io/conduit/7//#testresult/a28a8b4081d05348",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally.\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)",
+      "time" : {
+        "start" : 1624635359642,
+        "stop" : 1624635359642,
+        "duration" : 0
+      }
+    } ]
+  }
+}
