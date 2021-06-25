@@ -16,23 +16,31 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          
       - name: install Nodejs
         uses: actions/setup-node@v2
         with:
           node-version: '14'
+      
+      - name: Start Conduit
+        run: docker-compose up -d
+
 
       - name: Install Selenium Side Runner
         run: |
           npm install -g selenium-side-runner
+          
       - name: Install Chrome
         run: |
           sudo apt install google-chrome-stable
+          
       - name: Install seleniumbase
         run: pip install seleniumbase
 
       - name: Install chromedriver
         run: |
           seleniumbase install chromedriver
+          
       - name: Run Tests
         run: |
           selenium-side-runner -c "browserName=chrome goog:chromeOptions.args=[disable-infobars, headless]" seleniumide-tests/login.side
