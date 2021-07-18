@@ -16,7 +16,7 @@ Kevésbé fontos automatizálás szempontjából
 A013, CON_TC17_BLOGBEJEGYZÉS KEDVENCKÉNT VALÓ MEGJELÖLÉSE, felület automatizálás, 2.prioritású követelmény
 
 Beviteli mezõk validációi
-Esetleg ezek összevonhatóak e egy tesztesetbe a pozitív teszteseteik utáni lépésekként?
+Esetleg ezek összevonhatóak e egy tesztesetbe.
 A014, CON_TC11_Új blogbejegyzés - üresen hagyott mezõk (figyelmeztetõ üzenet megjelenése)
 A015, CON_TC23_Felhasználói regisztráció helyes adatokkal, már létezõ felhasználói adatokkal, nem érdemes automatizálni
 A016, CON_TC03_Felhasználói regisztráció helytelen email domain névvel, nem érdemes automatizálni
