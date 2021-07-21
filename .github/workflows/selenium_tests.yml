@@ -51,6 +51,18 @@ jobs:
         run: |
           seleniumbase install chromedriver
           
+      - name: Run registration test
+        run: |
+          selenium-side-runner -c "browserName=chrome goog:chromeOptions.args=[disable-infobars, headless]" seleniumide-tests/registration.side
+      
+      - name: Run login test
+        run: |
+          selenium-side-runner -c "browserName=chrome goog:chromeOptions.args=[disable-infobars, headless]" seleniumide-tests/login.side
+      
+      - name: Run post test
+        run: |
+          selenium-side-runner -c "browserName=chrome goog:chromeOptions.args=[disable-infobars, headless]" seleniumide-tests/post.side
+          
       - name: Test with pytest
         run: |
           pytest --alluredir=allure-results
@@ -83,16 +95,3 @@ jobs:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: allure-history
-          
-      - name: Run registration test
-        run: |
-          selenium-side-runner -c "browserName=chrome goog:chromeOptions.args=[disable-infobars, headless]" seleniumide-tests/registration.side
-      
-      - name: Run login test
-        run: |
-          selenium-side-runner -c "browserName=chrome goog:chromeOptions.args=[disable-infobars, headless]" seleniumide-tests/login.side
-      
-      - name: Run post test
-        run: |
-          selenium-side-runner -c "browserName=chrome goog:chromeOptions.args=[disable-infobars, headless]" seleniumide-tests/post.side
-          
