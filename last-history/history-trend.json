@@ -1,4 +1,16 @@
 [ {
+  "buildOrder" : 10,
+  "reportUrl" : "https://Bebe-ops.github.io/conduit/10/",
+  "reportName" : "Allure Report with history",
+  "data" : {
+    "failed" : 0,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 0,
+    "unknown" : 0,
+    "total" : 0
+  }
+}, {
   "buildOrder" : 9,
   "reportUrl" : "https://Bebe-ops.github.io/conduit/9/",
   "reportName" : "Allure Report with history",
@@ -217,18 +229,6 @@
 }, {
   "buildOrder" : 12,
   "reportUrl" : "https://Bebe-ops.github.io/conduit/12/",
-  "reportName" : "Allure Report with history",
-  "data" : {
-    "failed" : 0,
-    "broken" : 0,
-    "skipped" : 0,
-    "passed" : 0,
-    "unknown" : 0,
-    "total" : 0
-  }
-}, {
-  "buildOrder" : 11,
-  "reportUrl" : "https://Bebe-ops.github.io/conduit/11/",
   "reportName" : "Allure Report with history",
   "data" : {
     "failed" : 0,
