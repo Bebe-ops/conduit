@@ -1,8 +1,15 @@
-name: Login Github Actions
-on: [push]
+name: Selenium webdriver tests
+on: 
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+    
 jobs:
-  Explore-GitHub-Actions:
+
+  build:
     runs-on: ubuntu-latest
+    
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
@@ -24,6 +31,10 @@ jobs:
       
       - name: Start Conduit
         run: docker-compose up -d
+        
+      - name: Sleep for 45 seconds
+        run: sleep 45s
+        shell: bash
 
       - name: Install Selenium Side Runner
         run: |
@@ -73,6 +84,15 @@ jobs:
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: allure-history
           
-      - name: Run Tests
+      - name: Run registration test
+        run: |
+          selenium-side-runner -c "browserName=chrome goog:chromeOptions.args=[disable-infobars, headless]" seleniumide-tests/registration.side
+      
+      - name: Run login test
         run: |
           selenium-side-runner -c "browserName=chrome goog:chromeOptions.args=[disable-infobars, headless]" seleniumide-tests/login.side
+      
+      - name: Run post test
+        run: |
+          selenium-side-runner -c "browserName=chrome goog:chromeOptions.args=[disable-infobars, headless]" seleniumide-tests/post.side
+          
