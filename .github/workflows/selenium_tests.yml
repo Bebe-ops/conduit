@@ -30,6 +30,10 @@ jobs:
         with:
           node-version: '14'
       
+      - name: Install Chrome
+        run: |
+          sudo apt install google-chrome-stable
+      
       - name: Start Conduit
         run: docker-compose up -d
         
@@ -39,11 +43,7 @@ jobs:
 
       - name: Install Selenium Side Runner
         run: |
-          npm install -g selenium-side-runner
-          
-      - name: Install Chrome
-        run: |
-          sudo apt install google-chrome-stable
+          npm install -g selenium-side-runner       
           
       - name: Install seleniumbase
         run: pip install seleniumbase
@@ -67,6 +67,18 @@ jobs:
       - name: Test with pytest
         run: |
           pytest --alluredir=allure-results
+      
+      - name: Collect docker logs
+        uses: jwalton/gh-docker-logs@v1
+        with:
+          dest: './logs'
+          
+      - name: Archive execution artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: docker-logs
+          path: ./logs
+
 
       - name: Get Allure history
         uses: actions/checkout@v2
