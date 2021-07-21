@@ -1,0 +1,10 @@
+[ {
+  "name" : "GitHub Actions",
+  "type" : "github",
+  "url" : "https://Bebe-ops.github.io/conduit",
+  "buildOrder" : 1,
+  "buildName" : "GitHub Actions Run #1052531075",
+  "buildUrl" : "https://github.com/Bebe-ops/conduit/actions/runs/1052531075",
+  "reportName" : "Allure Report with history",
+  "reportUrl" : "https://Bebe-ops.github.io/conduit/1/"
+} ]
