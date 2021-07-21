@@ -1,15 +1,4 @@
 {
-  "total" : 1,
-  "items" : [ {
-    "uid" : "d20f8d12e5873e8a33a473279de4bad5",
-    "name" : "seleiumide-tests",
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 12,
-      "skipped" : 0,
-      "passed" : 0,
-      "unknown" : 0,
-      "total" : 12
-    }
-  } ]
+  "total" : 0,
+  "items" : [ ]
 }
