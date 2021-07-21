@@ -8,8 +8,8 @@ options = Options()
 options.add_argument('--headless')
 options.add_argument('--disable-gpu')
 
-driver = webdriver.Chrome(ChromeDriverManager().install())
-# driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=options)  # headless mód
+# driver = webdriver.Chrome(ChromeDriverManager().install())
+driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=options)  # headless mód
 
 
 # A001, CON_TC01_Home page megjelenése login nélkül
