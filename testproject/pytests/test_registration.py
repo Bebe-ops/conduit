@@ -14,8 +14,8 @@ options.add_argument('--disable-gpu')
 
 class TestRegistration(object):
     def setup(self):
-        self.driver = webdriver.Chrome(ChromeDriverManager().install())
-        # self.driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=options)  # headless mód
+        # self.driver = webdriver.Chrome(ChromeDriverManager().install())
+        self.driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=options)  # headless mód
         self.driver.get("http://localhost:1667")
 
     def teardown(self):
