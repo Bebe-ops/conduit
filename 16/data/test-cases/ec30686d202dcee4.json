@@ -1,0 +1,53 @@
+{
+  "uid" : "ec30686d202dcee4",
+  "name" : "test_login_validator3",
+  "fullName" : "testproject.pytests.login_validators_test#test_login_validator3",
+  "historyId" : "6f7aff5945009cff9be2fc8a92c1f471",
+  "time" : {
+    "start" : 1626980445154,
+    "stop" : 1626980479038,
+    "duration" : 33884
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "testproject.pytests"
+  }, {
+    "name" : "suite",
+    "value" : "login_validators_test"
+  }, {
+    "name" : "host",
+    "value" : "fv-az39-748"
+  }, {
+    "name" : "thread",
+    "value" : "3664-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testproject.pytests.login_validators_test"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "ec30686d202dcee4.json",
+  "parameterValues" : [ ]
+}
