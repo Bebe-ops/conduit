@@ -2,12 +2,23 @@
   "buildOrder" : 18,
   "reportUrl" : "https://Bebe-ops.github.io/conduit/18/",
   "reportName" : "Allure Report with history",
-  "data" : { }
+  "data" : {
+    "duration" : 320245
+  }
 }, {
-  "buildOrder" : 19,
-  "reportUrl" : "https://Bebe-ops.github.io/conduit/19/",
+  "buildOrder" : 17,
+  "reportUrl" : "https://Bebe-ops.github.io/conduit/17/",
   "reportName" : "Allure Report with history",
-  "data" : { }
+  "data" : {
+    "duration" : 308295
+  }
+}, {
+  "buildOrder" : 16,
+  "reportUrl" : "https://Bebe-ops.github.io/conduit/16/",
+  "reportName" : "Allure Report with history",
+  "data" : {
+    "duration" : 312942
+  }
 }, {
   "buildOrder" : 15,
   "reportUrl" : "https://Bebe-ops.github.io/conduit/15/",
@@ -52,7 +63,45 @@
   "buildOrder" : 7,
   "reportUrl" : "https://Bebe-ops.github.io/conduit/7/",
   "reportName" : "Allure Report with history",
-  "data" : {
-    "duration" : 16387
-  }
+  "data" : { }
+}, {
+  "buildOrder" : 6,
+  "reportUrl" : "https://Bebe-ops.github.io/conduit/6/",
+  "reportName" : "Allure Report with history",
+  "data" : { }
+}, {
+  "buildOrder" : 5,
+  "reportUrl" : "https://Bebe-ops.github.io/conduit/5/",
+  "reportName" : "Allure Report with history",
+  "data" : { }
+}, {
+  "buildOrder" : 4,
+  "reportUrl" : "https://Bebe-ops.github.io/conduit/4/",
+  "reportName" : "Allure Report with history",
+  "data" : { }
+}, {
+  "buildOrder" : 3,
+  "reportUrl" : "https://Bebe-ops.github.io/conduit/3/",
+  "reportName" : "Allure Report with history",
+  "data" : { }
+}, {
+  "buildOrder" : 2,
+  "reportUrl" : "https://Bebe-ops.github.io/conduit/2/",
+  "reportName" : "Allure Report with history",
+  "data" : { }
+}, {
+  "buildOrder" : 1,
+  "reportUrl" : "https://Bebe-ops.github.io/conduit/1/",
+  "reportName" : "Allure Report with history",
+  "data" : { }
+}, {
+  "buildOrder" : 23,
+  "reportUrl" : "https://Bebe-ops.github.io/conduit/23/",
+  "reportName" : "Allure Report with history",
+  "data" : { }
+}, {
+  "buildOrder" : 22,
+  "reportUrl" : "https://Bebe-ops.github.io/conduit/22/",
+  "reportName" : "Allure Report with history",
+  "data" : { }
 } ]
