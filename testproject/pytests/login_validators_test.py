@@ -8,11 +8,9 @@ from random import randint
 from selenium.webdriver.chrome.options import Options
 
 options = Options()
-options.add_argument('--headless')
-options.add_argument('--disable-gpu')
+options.headless = True
 
-# driver = webdriver.Chrome(ChromeDriverManager().install())
-driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)  # headless mód
+driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=options)
 
 
 def find_elem_and_click(xp):

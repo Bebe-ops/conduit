@@ -4,13 +4,12 @@ import time
 from selenium.webdriver.chrome.options import Options
 
 options = Options()
-options.headless = False
+options.headless = True
 
 
 class TestCookie(object):
     def setup(self):
-        # self.driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=options)  # headless
-        self.driver = webdriver.Chrome(ChromeDriverManager().install())
+        self.driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=options)
         self.driver.get("http://localhost:1667")
 
     def teardown(self):
