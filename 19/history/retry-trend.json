@@ -7,6 +7,30 @@
     "retry" : 0
   }
 }, {
+  "buildOrder" : 18,
+  "reportUrl" : "https://Bebe-ops.github.io/conduit/18/",
+  "reportName" : "Allure Report with history",
+  "data" : {
+    "run" : 13,
+    "retry" : 0
+  }
+}, {
+  "buildOrder" : 17,
+  "reportUrl" : "https://Bebe-ops.github.io/conduit/17/",
+  "reportName" : "Allure Report with history",
+  "data" : {
+    "run" : 12,
+    "retry" : 0
+  }
+}, {
+  "buildOrder" : 16,
+  "reportUrl" : "https://Bebe-ops.github.io/conduit/16/",
+  "reportName" : "Allure Report with history",
+  "data" : {
+    "run" : 12,
+    "retry" : 0
+  }
+}, {
   "buildOrder" : 15,
   "reportUrl" : "https://Bebe-ops.github.io/conduit/15/",
   "reportName" : "Allure Report with history",
@@ -75,7 +99,63 @@
   "reportUrl" : "https://Bebe-ops.github.io/conduit/7/",
   "reportName" : "Allure Report with history",
   "data" : {
-    "run" : 12,
+    "run" : 0,
+    "retry" : 0
+  }
+}, {
+  "buildOrder" : 6,
+  "reportUrl" : "https://Bebe-ops.github.io/conduit/6/",
+  "reportName" : "Allure Report with history",
+  "data" : {
+    "run" : 0,
+    "retry" : 0
+  }
+}, {
+  "buildOrder" : 5,
+  "reportUrl" : "https://Bebe-ops.github.io/conduit/5/",
+  "reportName" : "Allure Report with history",
+  "data" : {
+    "run" : 0,
+    "retry" : 0
+  }
+}, {
+  "buildOrder" : 4,
+  "reportUrl" : "https://Bebe-ops.github.io/conduit/4/",
+  "reportName" : "Allure Report with history",
+  "data" : {
+    "run" : 0,
+    "retry" : 0
+  }
+}, {
+  "buildOrder" : 3,
+  "reportUrl" : "https://Bebe-ops.github.io/conduit/3/",
+  "reportName" : "Allure Report with history",
+  "data" : {
+    "run" : 0,
+    "retry" : 0
+  }
+}, {
+  "buildOrder" : 2,
+  "reportUrl" : "https://Bebe-ops.github.io/conduit/2/",
+  "reportName" : "Allure Report with history",
+  "data" : {
+    "run" : 0,
+    "retry" : 0
+  }
+}, {
+  "buildOrder" : 1,
+  "reportUrl" : "https://Bebe-ops.github.io/conduit/1/",
+  "reportName" : "Allure Report with history",
+  "data" : {
+    "run" : 0,
+    "retry" : 0
+  }
+}, {
+  "buildOrder" : 23,
+  "reportUrl" : "https://Bebe-ops.github.io/conduit/23/",
+  "reportName" : "Allure Report with history",
+  "data" : {
+    "run" : 0,
     "retry" : 0
   }
 } ]
