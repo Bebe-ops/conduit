@@ -1,4 +1,11 @@
 [ {
+  "buildOrder" : 20,
+  "reportUrl" : "https://Bebe-ops.github.io/conduit/20/",
+  "reportName" : "Allure Report with history",
+  "data" : {
+    "duration" : 326069
+  }
+}, {
   "buildOrder" : 19,
   "reportUrl" : "https://Bebe-ops.github.io/conduit/19/",
   "reportName" : "Allure Report with history",
@@ -97,11 +104,6 @@
 }, {
   "buildOrder" : 1,
   "reportUrl" : "https://Bebe-ops.github.io/conduit/1/",
-  "reportName" : "Allure Report with history",
-  "data" : { }
-}, {
-  "buildOrder" : 23,
-  "reportUrl" : "https://Bebe-ops.github.io/conduit/23/",
   "reportName" : "Allure Report with history",
   "data" : { }
 } ]
