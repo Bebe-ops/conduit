@@ -4,7 +4,7 @@ import time
 from selenium.webdriver.chrome.options import Options
 
 options = Options()
-options.headless = True
+options.headless = False
 
 
 class TestCookie(object):
@@ -16,7 +16,6 @@ class TestCookie(object):
         self.driver.close()
 
     def test_cookie(self):
-
         def locators(xp):
             element = self.driver.find_element_by_xpath(xp)
             return element
@@ -25,6 +24,7 @@ class TestCookie(object):
         decline_btn = locators('//*[@id="cookie-policy-panel"]//button[1]/div')
         accept_btn = locators('//*[@id="cookie-policy-panel"]//button[2]/div')
         link = locators('//a[@href="https://cookiesandyou.com/"]')
+        cookie_div_class_name = locators('//div[@class="cookie__bar__content"]').get_attribute('class')
 
         # test_data
         cookie_text = 'We use cookies to ensure you get the best experience on our website. Learn More...'
@@ -38,7 +38,18 @@ class TestCookie(object):
         assert decline_btn.is_enabled()
         assert accept_btn.is_enabled()
 
+        actual_all_div = []
+
+        def find_all_div_class_name(my_list):
+            all_div = self.driver.find_elements_by_tag_name('div')
+            all_div_class_name = my_list
+            for _ in all_div:
+                all_div_class_name.append(_.get_attribute("class"))
+
+        find_all_div_class_name(actual_all_div)
+        assert cookie_div_class_name in actual_all_div
         time.sleep(3)
+
         main_window = self.driver.window_handles[0]
         link.click()
         new_window = self.driver.window_handles[1]
@@ -48,5 +59,11 @@ class TestCookie(object):
         self.driver.switch_to.window(main_window)
         time.sleep(3)
 
-        decline_btn.click()
+        accept_btn.click()
         time.sleep(5)
+        self.driver.refresh()
+        time.sleep(5)
+        actual_all_div2 = []
+        find_all_div_class_name(actual_all_div2)
+        assert cookie_div_class_name not in actual_all_div2
+
