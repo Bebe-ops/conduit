@@ -1,0 +1,82 @@
+{
+  "uid" : "99d4886af366f5a8",
+  "name" : "test_registration",
+  "fullName" : "testproject.pytests.test_registration_pom#test_registration",
+  "historyId" : "66cc93efec250081ecfdf3f09ecbdf08",
+  "time" : {
+    "start" : 1627663944059,
+    "stop" : 1627663968858,
+    "duration" : 24799
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "testproject.pytests"
+  }, {
+    "name" : "suite",
+    "value" : "test_registration_pom"
+  }, {
+    "name" : "host",
+    "value" : "fv-az28-812"
+  }, {
+    "name" : "thread",
+    "value" : "3799-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testproject.pytests.test_registration_pom"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "6cd1798d083ef3ff",
+        "reportUrl" : "https://Bebe-ops.github.io/conduit/21//#testresult/6cd1798d083ef3ff",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627308351309,
+          "stop" : 1627308375867,
+          "duration" : 24558
+        }
+      }, {
+        "uid" : "80d67458ab6b0827",
+        "reportUrl" : "https://Bebe-ops.github.io/conduit/20//#testresult/80d67458ab6b0827",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627300029522,
+          "stop" : 1627300054308,
+          "duration" : 24786
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "99d4886af366f5a8.json",
+  "parameterValues" : [ ]
+}
