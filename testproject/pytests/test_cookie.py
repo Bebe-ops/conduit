@@ -4,7 +4,7 @@ import time
 from selenium.webdriver.chrome.options import Options
 
 options = Options()
-options.headless = False
+options.headless = True
 
 
 class TestCookie(object):
