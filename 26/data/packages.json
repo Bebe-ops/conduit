@@ -1,0 +1,206 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "children" : [ {
+    "name" : "testproject.pytests",
+    "children" : [ {
+      "name" : "homepage_test",
+      "children" : [ {
+        "name" : "test_homepage_without_login",
+        "uid" : "6447035489956456",
+        "parentUid" : "9301492f80c37c7886b94199b3cd58cf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627760083060,
+          "stop" : 1627760089005,
+          "duration" : 5945
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "9301492f80c37c7886b94199b3cd58cf"
+    }, {
+      "name" : "login_validators_test",
+      "children" : [ {
+        "name" : "test_login_validator1",
+        "uid" : "1154d8f9b98c3967",
+        "parentUid" : "1f03e936fbe93ea32fb4dae1d85cea9a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627760089008,
+          "stop" : 1627760105384,
+          "duration" : 16376
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_login_validator2",
+        "uid" : "54180d3ece71ee34",
+        "parentUid" : "1f03e936fbe93ea32fb4dae1d85cea9a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627760105386,
+          "stop" : 1627760126084,
+          "duration" : 20698
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_login_validator3",
+        "uid" : "45b7118a7b423066",
+        "parentUid" : "1f03e936fbe93ea32fb4dae1d85cea9a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627760126086,
+          "stop" : 1627760161403,
+          "duration" : 35317
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "1f03e936fbe93ea32fb4dae1d85cea9a"
+    }, {
+      "name" : "logout_test",
+      "children" : [ {
+        "name" : "test_logout",
+        "uid" : "4dbec1aca022b45f",
+        "parentUid" : "1dfb88f4d9a1419344142e18010ca0c6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627760161406,
+          "stop" : 1627760182315,
+          "duration" : 20909
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "1dfb88f4d9a1419344142e18010ca0c6"
+    }, {
+      "name" : "test_blog_post",
+      "children" : [ {
+        "name" : "test_new_blog",
+        "uid" : "8ac9bb2a91f417d5",
+        "parentUid" : "0a88d9849ba5d20cfc430c0a1378ea57",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627760182317,
+          "stop" : 1627760194136,
+          "duration" : 11819
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_mod_and_del_blog",
+        "uid" : "e2531918670576eb",
+        "parentUid" : "0a88d9849ba5d20cfc430c0a1378ea57",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627760194138,
+          "stop" : 1627760224774,
+          "duration" : 30636
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "0a88d9849ba5d20cfc430c0a1378ea57"
+    }, {
+      "name" : "test_cookie",
+      "children" : [ {
+        "name" : "test_cookie",
+        "uid" : "f021e9727d7a94ac",
+        "parentUid" : "40c8f7c2c6cee1647a05af6c863b38b8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627760226383,
+          "stop" : 1627760246307,
+          "duration" : 19924
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "40c8f7c2c6cee1647a05af6c863b38b8"
+    }, {
+      "name" : "test_login",
+      "children" : [ {
+        "name" : "test_successful_login",
+        "uid" : "f0c2016989cb6426",
+        "parentUid" : "95cacd4482dd27f9cb481d2b9089aa93",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627760246369,
+          "stop" : 1627760268047,
+          "duration" : 21678
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "95cacd4482dd27f9cb481d2b9089aa93"
+    }, {
+      "name" : "test_registration_pom",
+      "children" : [ {
+        "name" : "test_registration",
+        "uid" : "b8e41fc08a00be86",
+        "parentUid" : "e6e8a7eae39bab84d37ab7df480369a7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627760268049,
+          "stop" : 1627760292840,
+          "duration" : 24791
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_reg_validators1",
+        "uid" : "96c1b14350427c85",
+        "parentUid" : "e6e8a7eae39bab84d37ab7df480369a7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627760292842,
+          "stop" : 1627760309629,
+          "duration" : 16787
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_reg_validators2",
+        "uid" : "4d8334425c3cfb89",
+        "parentUid" : "e6e8a7eae39bab84d37ab7df480369a7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627760309631,
+          "stop" : 1627760322525,
+          "duration" : 12894
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_reg_validators3",
+        "uid" : "d2718fd9eaba3d90",
+        "parentUid" : "e6e8a7eae39bab84d37ab7df480369a7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627760322528,
+          "stop" : 1627760350705,
+          "duration" : 28177
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "e6e8a7eae39bab84d37ab7df480369a7"
+    } ],
+    "uid" : "testproject.pytests"
+  } ],
+  "name" : "packages"
+}
