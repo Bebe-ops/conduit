@@ -12,9 +12,17 @@ options.headless = True
 
 driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=options)
 
+# locators
+registration_xp = '//li[@class="nav-item"]/a[@href="#/register"]'
+sign_up_btn_xp = '//button[contains(text(),"Sign up")]'
+notice_btn_xp = '//div[@class="swal-button-container"]/button'
+logout_xp = '//nav/div/ul//li/a[@active-class="active"]'
+login_xp = '//li[@class="nav-item"]/a[@href="#/login"]'
+sign_in_btn_xp = '//button[contains(text(),"Sign in")]'
+
 
 def find_elem_and_click(xp):
-    driver.find_element_by_xpath(xp).click()
+    WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.XPATH, xp))).click()
 
 
 def fill_input_fields(my_list, field_list, xp):  # fill in input fields
@@ -24,13 +32,12 @@ def fill_input_fields(my_list, field_list, xp):  # fill in input fields
     driver.find_element_by_xpath(xp).click()
 
 
-def swal_handling(expected_title, expected_text):  # validators
-    swal_title = WebDriverWait(driver, 5).until(
+def notice_handling(expected_title, expected_text):  # validators
+    notice_title = WebDriverWait(driver, 5).until(
         EC.visibility_of_element_located((By.XPATH, '//div[@class="swal-title"]')))
-    swal_text = driver.find_element_by_xpath('//div[@class="swal-text"]')
-    assert expected_title == swal_title.text and expected_text == swal_text.text
-    time.sleep(3)
-    driver.find_element_by_xpath('//div[@class="swal-modal"]//button').click()
+    notice_text = driver.find_element_by_xpath('//div[@class="swal-text"]')
+    assert expected_title == notice_title.text and expected_text == notice_text.text
+    find_elem_and_click(notice_btn_xp)
 
 
 def check_input_fields_fill_in(fields):
@@ -41,6 +48,8 @@ def check_input_fields_fill_in(fields):
 def compare_the_values_of_two_lists(real_list, expected_list):
     for _ in range(len(real_list)):
         assert real_list[_].get_attribute("value") == expected_list[_]
+
+
 # ----------------------------------------------------------------------------
 
 
@@ -48,99 +57,103 @@ def compare_the_values_of_two_lists(real_list, expected_list):
 def test_login_validator1():
     url = "http://localhost:1667"
     driver.get(url)
-    time.sleep(3)
+    time.sleep(2)
 
-    find_elem_and_click('//li[@class="nav-item"]/a[@href="#/login"]')
-    input_fields = driver.find_elements_by_tag_name("input")
+    # locators, test data
+    need_an_acc_xp = '//div/p/a[contains(text(),"Need an account?")]'
     expected_input_fields = ["Email", "Password"]
-    input_fields_placeholder_text = []
+    expected_msg_title = 'Login failed!'
+    expected_user_msg_text = 'Invalid user credentials.'
+    random_user = f"Sanchez{randint(101, 200)}"
+    reg_input_data = [f"{random_user}@gmail.com", "12ABab@&"]
 
-    # check that the 2 input fields are displayed (+ placeholders)
+    find_elem_and_click(login_xp)
+    input_fields = driver.find_elements_by_tag_name("input")
+
+    # check placeholders
+    input_fields_placeholder_text = []
     for _ in input_fields:
         input_fields_placeholder_text.append(_.get_attribute("placeholder"))
     assert len(input_fields_placeholder_text) == 2
     assert expected_input_fields == input_fields_placeholder_text
 
-    # check need_an_account_link, sign_in_btn
+    # check that the 2 input fields are displayed
     def displayed_and_enabled(xp):
         driver.find_element_by_xpath(xp)
         assert driver.find_element_by_xpath(xp).is_displayed()
         assert driver.find_element_by_xpath(xp).is_enabled()
 
-    displayed_and_enabled('//div/p/a[contains(text(),"Need an account?")]')
-    displayed_and_enabled('//button[contains(text(),"Sign in")]')
+    displayed_and_enabled(need_an_acc_xp)
+    displayed_and_enabled(sign_in_btn_xp)
 
     # fill in input fields with test data
-    random_user = f"Sancho{randint(101,200)}"
-    reg_input_data = [f"{random_user}@gmail.com", "12ABab@&"]
-    expected_msg_title = 'Login failed!'
-    expected_user_msg_text = 'Invalid user credentials.'
-
-    fill_input_fields(reg_input_data, input_fields, '//button[contains(text(),"Sign in")]')
-    swal_handling(expected_msg_title, expected_user_msg_text)  # check --> error message title,text
-    time.sleep(3)
+    fill_input_fields(reg_input_data, input_fields, sign_in_btn_xp)
+    notice_handling(expected_msg_title, expected_user_msg_text)  # check --> error message title,text
+    time.sleep(2)
 
     # check that the input fields are fill in with test_data
     check_input_fields_fill_in(input_fields)
-    time.sleep(3)
+    time.sleep(2)
 
 
 # A008, CON_TC06_Felhasználói bejelentkezés helytelen formátumú email címmel
 def test_login_validator2():
     url = "http://localhost:1667"
     driver.get(url)
-    time.sleep(3)
-
-    find_elem_and_click('//li[@class="nav-item"]/a[@href="#/login"]')
     time.sleep(2)
-    input_fields = driver.find_elements_by_tag_name("input")
-    user_data = ["wester@gmailcom", "12ABab#>"]
+
+    # test data
+    user_data = ["tester@gmailcom", "12ABab#>"]
     expected_msg_title = 'Login failed!'
     expected_msg_email_format_text = 'Email must be a valid email.'
 
-    fill_input_fields(user_data, input_fields, '//button[contains(text(),"Sign in")]')
-    time.sleep(3)
-    compare_the_values_of_two_lists(input_fields, user_data)  # check -> input data is visible in the input fields
-    swal_handling(expected_msg_title, expected_msg_email_format_text)  # check validator
-    time.sleep(3)
+    find_elem_and_click(login_xp)
+    input_fields = driver.find_elements_by_tag_name("input")
+    fill_input_fields(user_data, input_fields, sign_in_btn_xp)
+    time.sleep(2)
+
+    # check -> input data is visible in the input fields
+    compare_the_values_of_two_lists(input_fields, user_data)
+    notice_handling(expected_msg_title, expected_msg_email_format_text)  # check validator
+    time.sleep(2)
     check_input_fields_fill_in(input_fields)
-    time.sleep(3)
+    time.sleep(2)
 
 
 # A009, CON_TC07_Felhasználói bejelentkezés regisztrált felhasználóval, de helytelen jelszóval
 def test_login_validator3():
     url = "http://localhost:1667"
     driver.get(url)
-    time.sleep(3)
-
-    # successful registration
-    find_elem_and_click('//li[@class="nav-item"]/a[@href="#/register"]')  # sign up
-    time.sleep(3)
-    reg_input_fields = WebDriverWait(driver, 5).until(EC.visibility_of_all_elements_located((By.TAG_NAME, 'input')))
-    random_user = f"Lukas{randint(1,100)}"
-    reg_input_data = [random_user, f"{random_user}@gmail.com", "12ABab@&"]
-
-    fill_input_fields(reg_input_data, reg_input_fields, '//button[contains(text(),"Sign up")]')
-    swal_btn = WebDriverWait(driver, 5).until(EC.visibility_of_element_located
-                                              ((By.XPATH, '//div[@class="swal-button-container"]/button')))
-    swal_btn.click()
-    time.sleep(3)
-    find_elem_and_click('//nav/div/ul//li/a[@active-class="active"]')  # logout
-    time.sleep(3)
-
-    # login with wrong password
-    find_elem_and_click('//li[@class="nav-item"]/a[@href="#/login"]')
     time.sleep(2)
 
+    # test data
+    random_user = f"Luke{randint(1, 100)}"
+    reg_input_data = [random_user, f"{random_user}@gmail.com", "12ABab@&"]
+
+    # successful registration
+    find_elem_and_click(registration_xp)  # sign up
+    time.sleep(2)
+    reg_input_fields = WebDriverWait(driver, 5).until(EC.visibility_of_all_elements_located((By.TAG_NAME, 'input')))
+    fill_input_fields(reg_input_data, reg_input_fields, sign_up_btn_xp)
+
+    find_elem_and_click(notice_btn_xp)
+    time.sleep(2)
+    find_elem_and_click(logout_xp)
+    time.sleep(2)
+
+    # login with wrong password
+    # test_data
     expected_msg_title = 'Login failed!'
     expected_user_pwd_text = 'Invalid user credentials.'
     login_data = [reg_input_data[1], "44ABab@&"]
-    log_input_fields = WebDriverWait(driver, 5).until(EC.visibility_of_all_elements_located((By.TAG_NAME, 'input')))
 
-    fill_input_fields(login_data, log_input_fields, '//button[contains(text(),"Sign in")]')
-    time.sleep(3)
+    find_elem_and_click(login_xp)
+    time.sleep(2)
+    log_input_fields = WebDriverWait(driver, 5).until(EC.visibility_of_all_elements_located((By.TAG_NAME, 'input')))
+    fill_input_fields(login_data, log_input_fields, sign_in_btn_xp)
+    time.sleep(2)
+
     compare_the_values_of_two_lists(log_input_fields, login_data)
-    swal_handling(expected_msg_title, expected_user_pwd_text)
-    time.sleep(3)
+    notice_handling(expected_msg_title, expected_user_pwd_text)
+    time.sleep(2)
     check_input_fields_fill_in(log_input_fields)
-    time.sleep(3)
