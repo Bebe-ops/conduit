@@ -66,4 +66,3 @@ class TestCookie(object):
         actual_all_div2 = []
         find_all_div_class_name(actual_all_div2)
         assert cookie_div_class_name not in actual_all_div2
-
