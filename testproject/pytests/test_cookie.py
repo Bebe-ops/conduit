@@ -7,6 +7,7 @@ options = Options()
 options.headless = True
 
 
+# A013 - Adatkezelési nyilatkozat használata
 class TestCookie(object):
     def setup(self):
         self.driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=options)
