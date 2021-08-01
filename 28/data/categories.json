@@ -1,0 +1,26 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: assert None == 'https://cdn.pixabay.com/photo/2013/07/12/18/35/alien-153542_960_720.png'\n +  where None = <bound method WebElement.get_attribute of <selenium.webdriver.remote.webelement.WebElement (session=\"bfebb47c18bc0ec37838b2e3ade0a347\", element=\"21d30ab5-ac24-4561-a7ab-ba5b4af32ee3\")>>('src')\n +    where <bound method WebElement.get_attribute of <selenium.webdriver.remote.webelement.WebElement (session=\"bfebb47c18bc0ec37838b2e3ade0a347\", element=\"21d30ab5-ac24-4561-a7ab-ba5b4af32ee3\")>> = <selenium.webdriver.remote.webelement.WebElement (session=\"bfebb47c18bc0ec37838b2e3ade0a347\", element=\"21d30ab5-ac24-4561-a7ab-ba5b4af32ee3\")>.get_attribute\n +      where <selenium.webdriver.remote.webelement.WebElement (session=\"bfebb47c18bc0ec37838b2e3ade0a347\", element=\"21d30ab5-ac24-4561-a7ab-ba5b4af32ee3\")> = locator('//img[@class=\"user-img\"]')",
+      "children" : [ {
+        "name" : "test_user_profile",
+        "uid" : "879fcbe6ffa91048",
+        "parentUid" : "3cce7d7707e4081686a76e71c3e8fb3d",
+        "status" : "failed",
+        "time" : {
+          "start" : 1627828514769,
+          "stop" : 1627828524521,
+          "duration" : 9752
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "3cce7d7707e4081686a76e71c3e8fb3d"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ],
+  "name" : "categories"
+}
