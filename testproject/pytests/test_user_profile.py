@@ -92,6 +92,7 @@ def test_user_profile():
     profile_picture_xp = '//img[@class="user-img"]'
     assert locator(user_id_nav_xp).text == mod_data["username"]
     locator(user_id_nav_xp).click()
+    time.sleep(3)
     assert locator(profile_picture_xp).get_attribute("src") == mod_data["pict_url"]
     time.sleep(2)
 
