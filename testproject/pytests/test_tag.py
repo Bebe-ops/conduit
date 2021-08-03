@@ -9,7 +9,7 @@ from random import randint
 from selenium.webdriver.chrome.options import Options
 
 options = Options()
-options.headless = False
+options.headless = True
 
 driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=options)
 
