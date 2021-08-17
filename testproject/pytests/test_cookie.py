@@ -4,7 +4,7 @@ import time
 from selenium.webdriver.chrome.options import Options
 
 options = Options()
-options.headless = False
+options.headless = True
 
 
 # A013_CON_Adatkezelési nyilatkozat használata
