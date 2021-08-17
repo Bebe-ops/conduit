@@ -4,10 +4,10 @@ import time
 from selenium.webdriver.chrome.options import Options
 
 options = Options()
-options.headless = True
+options.headless = False
 
 
-# A013 - Adatkezelési nyilatkozat használata
+# A013_CON_Adatkezelési nyilatkozat használata
 class TestCookie(object):
     def setup(self):
         self.driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=options)
@@ -32,6 +32,7 @@ class TestCookie(object):
         decline_btn_text = 'I decline!'
         accept_btn_text = 'I accept!'
 
+        # checking the display of the cookie elements
         assert cookie.is_displayed()
         assert cookie.text == cookie_text
         assert decline_btn.text == decline_btn_text
@@ -39,18 +40,25 @@ class TestCookie(object):
         assert decline_btn.is_enabled()
         assert accept_btn.is_enabled()
 
-        actual_all_div = []
+        # check cookie name
+        expected_cookie_name = 'drash_sess'
+        cookies = self.driver.get_cookies()
+        for _ in cookies:
+            assert _["name"] == expected_cookie_name
 
+        # checking that the cookie_bar_content element is in the div_list
         def find_all_div_class_name(my_list):
             all_div = self.driver.find_elements_by_tag_name('div')
             all_div_class_name = my_list
             for _ in all_div:
                 all_div_class_name.append(_.get_attribute("class"))
 
+        actual_all_div = []
         find_all_div_class_name(actual_all_div)
         assert cookie_div_class_name in actual_all_div
         time.sleep(3)
 
+        # cookie link navigation
         main_window = self.driver.window_handles[0]
         link.click()
         new_window = self.driver.window_handles[1]
@@ -60,10 +68,33 @@ class TestCookie(object):
         self.driver.switch_to.window(main_window)
         time.sleep(3)
 
-        accept_btn.click()
-        time.sleep(5)
+        # check decline cookie button and check the cookie value
+        decline_btn.click()
+        expected_decline_cookie_name = 'vue-cookie-accept-decline-cookie-policy-panel'
+        expected_decline_cookie_value = 'decline'
+
+        def check_cookie_value(cookie_name, cookie_value):
+            current_cookies = self.driver.get_cookies()
+            for _ in current_cookies:
+                if _["name"] == cookie_name:
+                    assert _["value"] == cookie_value
+
+        check_cookie_value(expected_decline_cookie_name, expected_decline_cookie_value)
+
+        # delete cookies (so that I can check the accept button)
+        self.driver.delete_cookie(expected_decline_cookie_name)
         self.driver.refresh()
-        time.sleep(5)
-        actual_all_div2 = []
-        find_all_div_class_name(actual_all_div2)
-        assert cookie_div_class_name not in actual_all_div2
+        time.sleep(2)
+
+        # check accept_btn and check the cookie value
+        accept_btn = locators('//*[@id="cookie-policy-panel"]//button[2]/div')
+        accept_btn.click()
+        expected_accept_cookie_name = 'vue-cookie-accept-decline-cookie-policy-panel'
+        expected_accept_cookie_value = 'accept'
+
+        check_cookie_value(expected_accept_cookie_name, expected_accept_cookie_value)
+
+        # check that the cookie_bar_content div element is not in the div list
+        actual_all_div = []
+        find_all_div_class_name(actual_all_div)
+        assert cookie_div_class_name not in actual_all_div
