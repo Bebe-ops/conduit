@@ -1,0 +1,217 @@
+{
+  "uid" : "c9fd0920de6a73e4",
+  "name" : "test_cookie",
+  "fullName" : "testproject.pytests.test_cookie.TestCookie#test_cookie",
+  "historyId" : "d4963a7ff243a84f7d3bde7e2b0f5170",
+  "time" : {
+    "start" : 1630939215126,
+    "stop" : 1630939226941,
+    "duration" : 11815
+  },
+  "status" : "broken",
+  "statusMessage" : "selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: element is not attached to the page document\n  (Session info: headless chrome=92.0.4515.159)",
+  "statusTrace" : "self = <test_cookie.TestCookie object at 0x7f68091ec580>\n\n    def test_cookie(self):\n        def locators(xp):\n            element = self.driver.find_element_by_xpath(xp)\n            return element\n    \n        cookie = locators('//*[@class=\"cookie__bar__content\"]//div')\n        decline_btn = locators('//*[@id=\"cookie-policy-panel\"]//button[1]/div')\n        accept_btn = locators('//*[@id=\"cookie-policy-panel\"]//button[2]/div')\n        link = locators('//a[@href=\"https://cookiesandyou.com/\"]')\n        cookie_div_class_name = locators('//div[@class=\"cookie__bar__content\"]').get_attribute('class')\n    \n        # test_data\n        cookie_text = 'We use cookies to ensure you get the best experience on our website. Learn More...'\n        decline_btn_text = 'I decline!'\n        accept_btn_text = 'I accept!'\n    \n        # checking the display of the cookie elements\n        assert cookie.is_displayed()\n        assert cookie.text == cookie_text\n        assert decline_btn.text == decline_btn_text\n        assert accept_btn.text == accept_btn_text\n        assert decline_btn.is_enabled()\n        assert accept_btn.is_enabled()\n    \n        # check cookie name\n        expected_cookie_name = 'drash_sess'\n        cookies = self.driver.get_cookies()\n        for _ in cookies:\n            assert _[\"name\"] == expected_cookie_name\n    \n        # checking that the cookie_bar_content element is in the div_list\n        def find_all_div_class_name(my_list):\n            all_div = self.driver.find_elements_by_tag_name('div')\n            all_div_class_name = my_list\n            for _ in all_div:\n                all_div_class_name.append(_.get_attribute(\"class\"))\n    \n        actual_all_div = []\n        find_all_div_class_name(actual_all_div)\n        assert cookie_div_class_name in actual_all_div\n        time.sleep(3)\n    \n        # cookie link navigation\n        main_window = self.driver.window_handles[0]\n        link.click()\n        new_window = self.driver.window_handles[1]\n        self.driver.switch_to.window(new_window)\n        time.sleep(3)\n        self.driver.close()\n        self.driver.switch_to.window(main_window)\n        time.sleep(3)\n    \n        # check decline cookie button and check the cookie value\n        decline_btn.click()\n        expected_decline_cookie_name = 'vue-cookie-accept-decline-cookie-policy-panel'\n        expected_decline_cookie_value = 'decline'\n    \n        def check_cookie_value(cookie_name, cookie_value):\n            current_cookies = self.driver.get_cookies()\n            for _ in current_cookies:\n                if _[\"name\"] == cookie_name:\n                    assert _[\"value\"] == cookie_value\n    \n        check_cookie_value(expected_decline_cookie_name, expected_decline_cookie_value)\n    \n        # delete cookies (so that I can check the accept button)\n        self.driver.delete_cookie(expected_decline_cookie_name)\n        self.driver.refresh()\n        time.sleep(2)\n    \n        # check accept_btn and check the cookie value\n        accept_btn = locators('//*[@id=\"cookie-policy-panel\"]//button[2]/div')\n        accept_btn.click()\n        expected_accept_cookie_name = 'vue-cookie-accept-decline-cookie-policy-panel'\n        expected_accept_cookie_value = 'accept'\n    \n        check_cookie_value(expected_accept_cookie_name, expected_accept_cookie_value)\n    \n        # check that the cookie_bar_content div element is not in the div list\n        actual_all_div = []\n>       find_all_div_class_name(actual_all_div)\n\ntestproject/pytests/test_cookie.py:99: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \ntestproject/pytests/test_cookie.py:54: in find_all_div_class_name\n    all_div_class_name.append(_.get_attribute(\"class\"))\n/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/selenium/webdriver/remote/webelement.py:139: in get_attribute\n    attributeValue = self.parent.execute_script(\n/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py:634: in execute_script\n    return self.execute(command, {\n/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py:321: in execute\n    self.error_handler.check_response(response)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x7f6808c3f040>\nresponse = {'status': 404, 'value': '{\"value\":{\"error\":\"stale element reference\",\"message\":\"stale element reference: element is n...wn>\\\\n#17 0x5613a739ae58 \\\\u003Cunknown>\\\\n#18 0x5613a73b4dfd \\\\u003Cunknown>\\\\n#19 0x7f91c5d57609 start_thread\\\\n\"}}'}\n\n    def check_response(self, response):\n        \"\"\"\n        Checks that a JSON response from the WebDriver does not have an error.\n    \n        :Args:\n         - response - The JSON response from the WebDriver server as a dictionary\n           object.\n    \n        :Raises: If the response contains an error message.\n        \"\"\"\n        status = response.get('status', None)\n        if status is None or status == ErrorCode.SUCCESS:\n            return\n        value = None\n        message = response.get(\"message\", \"\")\n        screen = response.get(\"screen\", \"\")\n        stacktrace = None\n        if isinstance(status, int):\n            value_json = response.get('value', None)\n            if value_json and isinstance(value_json, basestring):\n                import json\n                try:\n                    value = json.loads(value_json)\n                    if len(value.keys()) == 1:\n                        value = value['value']\n                    status = value.get('error', None)\n                    if status is None:\n                        status = value[\"status\"]\n                        message = value[\"value\"]\n                        if not isinstance(message, basestring):\n                            value = message\n                            message = message.get('message')\n                    else:\n                        message = value.get('message', None)\n                except ValueError:\n                    pass\n    \n        exception_class = ErrorInResponseException\n        if status in ErrorCode.NO_SUCH_ELEMENT:\n            exception_class = NoSuchElementException\n        elif status in ErrorCode.NO_SUCH_FRAME:\n            exception_class = NoSuchFrameException\n        elif status in ErrorCode.NO_SUCH_WINDOW:\n            exception_class = NoSuchWindowException\n        elif status in ErrorCode.STALE_ELEMENT_REFERENCE:\n            exception_class = StaleElementReferenceException\n        elif status in ErrorCode.ELEMENT_NOT_VISIBLE:\n            exception_class = ElementNotVisibleException\n        elif status in ErrorCode.INVALID_ELEMENT_STATE:\n            exception_class = InvalidElementStateException\n        elif status in ErrorCode.INVALID_SELECTOR \\\n                or status in ErrorCode.INVALID_XPATH_SELECTOR \\\n                or status in ErrorCode.INVALID_XPATH_SELECTOR_RETURN_TYPER:\n            exception_class = InvalidSelectorException\n        elif status in ErrorCode.ELEMENT_IS_NOT_SELECTABLE:\n            exception_class = ElementNotSelectableException\n        elif status in ErrorCode.ELEMENT_NOT_INTERACTABLE:\n            exception_class = ElementNotInteractableException\n        elif status in ErrorCode.INVALID_COOKIE_DOMAIN:\n            exception_class = InvalidCookieDomainException\n        elif status in ErrorCode.UNABLE_TO_SET_COOKIE:\n            exception_class = UnableToSetCookieException\n        elif status in ErrorCode.TIMEOUT:\n            exception_class = TimeoutException\n        elif status in ErrorCode.SCRIPT_TIMEOUT:\n            exception_class = TimeoutException\n        elif status in ErrorCode.UNKNOWN_ERROR:\n            exception_class = WebDriverException\n        elif status in ErrorCode.UNEXPECTED_ALERT_OPEN:\n            exception_class = UnexpectedAlertPresentException\n        elif status in ErrorCode.NO_ALERT_OPEN:\n            exception_class = NoAlertPresentException\n        elif status in ErrorCode.IME_NOT_AVAILABLE:\n            exception_class = ImeNotAvailableException\n        elif status in ErrorCode.IME_ENGINE_ACTIVATION_FAILED:\n            exception_class = ImeActivationFailedException\n        elif status in ErrorCode.MOVE_TARGET_OUT_OF_BOUNDS:\n            exception_class = MoveTargetOutOfBoundsException\n        elif status in ErrorCode.JAVASCRIPT_ERROR:\n            exception_class = JavascriptException\n        elif status in ErrorCode.SESSION_NOT_CREATED:\n            exception_class = SessionNotCreatedException\n        elif status in ErrorCode.INVALID_ARGUMENT:\n            exception_class = InvalidArgumentException\n        elif status in ErrorCode.NO_SUCH_COOKIE:\n            exception_class = NoSuchCookieException\n        elif status in ErrorCode.UNABLE_TO_CAPTURE_SCREEN:\n            exception_class = ScreenshotException\n        elif status in ErrorCode.ELEMENT_CLICK_INTERCEPTED:\n            exception_class = ElementClickInterceptedException\n        elif status in ErrorCode.INSECURE_CERTIFICATE:\n            exception_class = InsecureCertificateException\n        elif status in ErrorCode.INVALID_COORDINATES:\n            exception_class = InvalidCoordinatesException\n        elif status in ErrorCode.INVALID_SESSION_ID:\n            exception_class = InvalidSessionIdException\n        elif status in ErrorCode.UNKNOWN_METHOD:\n            exception_class = UnknownMethodException\n        else:\n            exception_class = WebDriverException\n        if value == '' or value is None:\n            value = response['value']\n        if isinstance(value, basestring):\n            if exception_class == ErrorInResponseException:\n                raise exception_class(response, value)\n            raise exception_class(value)\n        if message == \"\" and 'message' in value:\n            message = value['message']\n    \n        screen = None\n        if 'screen' in value:\n            screen = value['screen']\n    \n        stacktrace = None\n        if 'stackTrace' in value and value['stackTrace']:\n            stacktrace = []\n            try:\n                for frame in value['stackTrace']:\n                    line = self._value_or_default(frame, 'lineNumber', '')\n                    file = self._value_or_default(frame, 'fileName', '<anonymous>')\n                    if line:\n                        file = \"%s:%s\" % (file, line)\n                    meth = self._value_or_default(frame, 'methodName', '<anonymous>')\n                    if 'className' in frame:\n                        meth = \"%s.%s\" % (frame['className'], meth)\n                    msg = \"    at %s (%s)\"\n                    msg = msg % (meth, file)\n                    stacktrace.append(msg)\n            except TypeError:\n                pass\n        if exception_class == ErrorInResponseException:\n            raise exception_class(response, message)\n        elif exception_class == UnexpectedAlertPresentException:\n            alert_text = None\n            if 'data' in value:\n                alert_text = value['data'].get('text')\n            elif 'alert' in value:\n                alert_text = value['alert'].get('text')\n            raise exception_class(message, screen, stacktrace, alert_text)\n>       raise exception_class(message, screen, stacktrace)\nE       selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: element is not attached to the page document\nE         (Session info: headless chrome=92.0.4515.159)\n\n/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py:242: StaleElementReferenceException",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: element is not attached to the page document\n  (Session info: headless chrome=92.0.4515.159)",
+    "statusTrace" : "self = <test_cookie.TestCookie object at 0x7f68091ec580>\n\n    def test_cookie(self):\n        def locators(xp):\n            element = self.driver.find_element_by_xpath(xp)\n            return element\n    \n        cookie = locators('//*[@class=\"cookie__bar__content\"]//div')\n        decline_btn = locators('//*[@id=\"cookie-policy-panel\"]//button[1]/div')\n        accept_btn = locators('//*[@id=\"cookie-policy-panel\"]//button[2]/div')\n        link = locators('//a[@href=\"https://cookiesandyou.com/\"]')\n        cookie_div_class_name = locators('//div[@class=\"cookie__bar__content\"]').get_attribute('class')\n    \n        # test_data\n        cookie_text = 'We use cookies to ensure you get the best experience on our website. Learn More...'\n        decline_btn_text = 'I decline!'\n        accept_btn_text = 'I accept!'\n    \n        # checking the display of the cookie elements\n        assert cookie.is_displayed()\n        assert cookie.text == cookie_text\n        assert decline_btn.text == decline_btn_text\n        assert accept_btn.text == accept_btn_text\n        assert decline_btn.is_enabled()\n        assert accept_btn.is_enabled()\n    \n        # check cookie name\n        expected_cookie_name = 'drash_sess'\n        cookies = self.driver.get_cookies()\n        for _ in cookies:\n            assert _[\"name\"] == expected_cookie_name\n    \n        # checking that the cookie_bar_content element is in the div_list\n        def find_all_div_class_name(my_list):\n            all_div = self.driver.find_elements_by_tag_name('div')\n            all_div_class_name = my_list\n            for _ in all_div:\n                all_div_class_name.append(_.get_attribute(\"class\"))\n    \n        actual_all_div = []\n        find_all_div_class_name(actual_all_div)\n        assert cookie_div_class_name in actual_all_div\n        time.sleep(3)\n    \n        # cookie link navigation\n        main_window = self.driver.window_handles[0]\n        link.click()\n        new_window = self.driver.window_handles[1]\n        self.driver.switch_to.window(new_window)\n        time.sleep(3)\n        self.driver.close()\n        self.driver.switch_to.window(main_window)\n        time.sleep(3)\n    \n        # check decline cookie button and check the cookie value\n        decline_btn.click()\n        expected_decline_cookie_name = 'vue-cookie-accept-decline-cookie-policy-panel'\n        expected_decline_cookie_value = 'decline'\n    \n        def check_cookie_value(cookie_name, cookie_value):\n            current_cookies = self.driver.get_cookies()\n            for _ in current_cookies:\n                if _[\"name\"] == cookie_name:\n                    assert _[\"value\"] == cookie_value\n    \n        check_cookie_value(expected_decline_cookie_name, expected_decline_cookie_value)\n    \n        # delete cookies (so that I can check the accept button)\n        self.driver.delete_cookie(expected_decline_cookie_name)\n        self.driver.refresh()\n        time.sleep(2)\n    \n        # check accept_btn and check the cookie value\n        accept_btn = locators('//*[@id=\"cookie-policy-panel\"]//button[2]/div')\n        accept_btn.click()\n        expected_accept_cookie_name = 'vue-cookie-accept-decline-cookie-policy-panel'\n        expected_accept_cookie_value = 'accept'\n    \n        check_cookie_value(expected_accept_cookie_name, expected_accept_cookie_value)\n    \n        # check that the cookie_bar_content div element is not in the div list\n        actual_all_div = []\n>       find_all_div_class_name(actual_all_div)\n\ntestproject/pytests/test_cookie.py:99: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \ntestproject/pytests/test_cookie.py:54: in find_all_div_class_name\n    all_div_class_name.append(_.get_attribute(\"class\"))\n/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/selenium/webdriver/remote/webelement.py:139: in get_attribute\n    attributeValue = self.parent.execute_script(\n/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py:634: in execute_script\n    return self.execute(command, {\n/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py:321: in execute\n    self.error_handler.check_response(response)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x7f6808c3f040>\nresponse = {'status': 404, 'value': '{\"value\":{\"error\":\"stale element reference\",\"message\":\"stale element reference: element is n...wn>\\\\n#17 0x5613a739ae58 \\\\u003Cunknown>\\\\n#18 0x5613a73b4dfd \\\\u003Cunknown>\\\\n#19 0x7f91c5d57609 start_thread\\\\n\"}}'}\n\n    def check_response(self, response):\n        \"\"\"\n        Checks that a JSON response from the WebDriver does not have an error.\n    \n        :Args:\n         - response - The JSON response from the WebDriver server as a dictionary\n           object.\n    \n        :Raises: If the response contains an error message.\n        \"\"\"\n        status = response.get('status', None)\n        if status is None or status == ErrorCode.SUCCESS:\n            return\n        value = None\n        message = response.get(\"message\", \"\")\n        screen = response.get(\"screen\", \"\")\n        stacktrace = None\n        if isinstance(status, int):\n            value_json = response.get('value', None)\n            if value_json and isinstance(value_json, basestring):\n                import json\n                try:\n                    value = json.loads(value_json)\n                    if len(value.keys()) == 1:\n                        value = value['value']\n                    status = value.get('error', None)\n                    if status is None:\n                        status = value[\"status\"]\n                        message = value[\"value\"]\n                        if not isinstance(message, basestring):\n                            value = message\n                            message = message.get('message')\n                    else:\n                        message = value.get('message', None)\n                except ValueError:\n                    pass\n    \n        exception_class = ErrorInResponseException\n        if status in ErrorCode.NO_SUCH_ELEMENT:\n            exception_class = NoSuchElementException\n        elif status in ErrorCode.NO_SUCH_FRAME:\n            exception_class = NoSuchFrameException\n        elif status in ErrorCode.NO_SUCH_WINDOW:\n            exception_class = NoSuchWindowException\n        elif status in ErrorCode.STALE_ELEMENT_REFERENCE:\n            exception_class = StaleElementReferenceException\n        elif status in ErrorCode.ELEMENT_NOT_VISIBLE:\n            exception_class = ElementNotVisibleException\n        elif status in ErrorCode.INVALID_ELEMENT_STATE:\n            exception_class = InvalidElementStateException\n        elif status in ErrorCode.INVALID_SELECTOR \\\n                or status in ErrorCode.INVALID_XPATH_SELECTOR \\\n                or status in ErrorCode.INVALID_XPATH_SELECTOR_RETURN_TYPER:\n            exception_class = InvalidSelectorException\n        elif status in ErrorCode.ELEMENT_IS_NOT_SELECTABLE:\n            exception_class = ElementNotSelectableException\n        elif status in ErrorCode.ELEMENT_NOT_INTERACTABLE:\n            exception_class = ElementNotInteractableException\n        elif status in ErrorCode.INVALID_COOKIE_DOMAIN:\n            exception_class = InvalidCookieDomainException\n        elif status in ErrorCode.UNABLE_TO_SET_COOKIE:\n            exception_class = UnableToSetCookieException\n        elif status in ErrorCode.TIMEOUT:\n            exception_class = TimeoutException\n        elif status in ErrorCode.SCRIPT_TIMEOUT:\n            exception_class = TimeoutException\n        elif status in ErrorCode.UNKNOWN_ERROR:\n            exception_class = WebDriverException\n        elif status in ErrorCode.UNEXPECTED_ALERT_OPEN:\n            exception_class = UnexpectedAlertPresentException\n        elif status in ErrorCode.NO_ALERT_OPEN:\n            exception_class = NoAlertPresentException\n        elif status in ErrorCode.IME_NOT_AVAILABLE:\n            exception_class = ImeNotAvailableException\n        elif status in ErrorCode.IME_ENGINE_ACTIVATION_FAILED:\n            exception_class = ImeActivationFailedException\n        elif status in ErrorCode.MOVE_TARGET_OUT_OF_BOUNDS:\n            exception_class = MoveTargetOutOfBoundsException\n        elif status in ErrorCode.JAVASCRIPT_ERROR:\n            exception_class = JavascriptException\n        elif status in ErrorCode.SESSION_NOT_CREATED:\n            exception_class = SessionNotCreatedException\n        elif status in ErrorCode.INVALID_ARGUMENT:\n            exception_class = InvalidArgumentException\n        elif status in ErrorCode.NO_SUCH_COOKIE:\n            exception_class = NoSuchCookieException\n        elif status in ErrorCode.UNABLE_TO_CAPTURE_SCREEN:\n            exception_class = ScreenshotException\n        elif status in ErrorCode.ELEMENT_CLICK_INTERCEPTED:\n            exception_class = ElementClickInterceptedException\n        elif status in ErrorCode.INSECURE_CERTIFICATE:\n            exception_class = InsecureCertificateException\n        elif status in ErrorCode.INVALID_COORDINATES:\n            exception_class = InvalidCoordinatesException\n        elif status in ErrorCode.INVALID_SESSION_ID:\n            exception_class = InvalidSessionIdException\n        elif status in ErrorCode.UNKNOWN_METHOD:\n            exception_class = UnknownMethodException\n        else:\n            exception_class = WebDriverException\n        if value == '' or value is None:\n            value = response['value']\n        if isinstance(value, basestring):\n            if exception_class == ErrorInResponseException:\n                raise exception_class(response, value)\n            raise exception_class(value)\n        if message == \"\" and 'message' in value:\n            message = value['message']\n    \n        screen = None\n        if 'screen' in value:\n            screen = value['screen']\n    \n        stacktrace = None\n        if 'stackTrace' in value and value['stackTrace']:\n            stacktrace = []\n            try:\n                for frame in value['stackTrace']:\n                    line = self._value_or_default(frame, 'lineNumber', '')\n                    file = self._value_or_default(frame, 'fileName', '<anonymous>')\n                    if line:\n                        file = \"%s:%s\" % (file, line)\n                    meth = self._value_or_default(frame, 'methodName', '<anonymous>')\n                    if 'className' in frame:\n                        meth = \"%s.%s\" % (frame['className'], meth)\n                    msg = \"    at %s (%s)\"\n                    msg = msg % (meth, file)\n                    stacktrace.append(msg)\n            except TypeError:\n                pass\n        if exception_class == ErrorInResponseException:\n            raise exception_class(response, message)\n        elif exception_class == UnexpectedAlertPresentException:\n            alert_text = None\n            if 'data' in value:\n                alert_text = value['data'].get('text')\n            elif 'alert' in value:\n                alert_text = value['alert'].get('text')\n            raise exception_class(message, screen, stacktrace, alert_text)\n>       raise exception_class(message, screen, stacktrace)\nE       selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: element is not attached to the page document\nE         (Session info: headless chrome=92.0.4515.159)\n\n/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py:242: StaleElementReferenceException",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "a64bc3acb5f2a138",
+      "name" : "log",
+      "source" : "a64bc3acb5f2a138.txt",
+      "type" : "text/plain",
+      "size" : 344
+    }, {
+      "uid" : "9775ed378885b1fd",
+      "name" : "stderr",
+      "source" : "9775ed378885b1fd.txt",
+      "type" : "text/plain",
+      "size" : 215
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "testproject.pytests"
+  }, {
+    "name" : "suite",
+    "value" : "test_cookie"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestCookie"
+  }, {
+    "name" : "host",
+    "value" : "fv-az77-409"
+  }, {
+    "name" : "thread",
+    "value" : "3778-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testproject.pytests.test_cookie"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 4,
+        "skipped" : 0,
+        "passed" : 10,
+        "unknown" : 0,
+        "total" : 14
+      },
+      "items" : [ {
+        "uid" : "6f4e2646a7279a5c",
+        "reportUrl" : "https://Bebe-ops.github.io/conduit/33//#testresult/6f4e2646a7279a5c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1629211735081,
+          "stop" : 1629211746942,
+          "duration" : 11861
+        }
+      }, {
+        "uid" : "cff8c1f21107a71d",
+        "reportUrl" : "https://Bebe-ops.github.io/conduit/32//#testresult/cff8c1f21107a71d",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally.\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)",
+        "time" : {
+          "start" : 1629211246505,
+          "stop" : 1629211246505,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "fe5eb8f90f500b48",
+        "reportUrl" : "https://Bebe-ops.github.io/conduit/31//#testresult/fe5eb8f90f500b48",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627996998455,
+          "stop" : 1627997018345,
+          "duration" : 19890
+        }
+      }, {
+        "uid" : "25348c10aa148af6",
+        "reportUrl" : "https://Bebe-ops.github.io/conduit/29//#testresult/25348c10aa148af6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627829272223,
+          "stop" : 1627829292061,
+          "duration" : 19838
+        }
+      }, {
+        "uid" : "4b8e676f4b0c7f13",
+        "reportUrl" : "https://Bebe-ops.github.io/conduit/28//#testresult/4b8e676f4b0c7f13",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627828348662,
+          "stop" : 1627828368410,
+          "duration" : 19748
+        }
+      }, {
+        "uid" : "a2e81fa6893f3203",
+        "reportUrl" : "https://Bebe-ops.github.io/conduit/27//#testresult/a2e81fa6893f3203",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627764352529,
+          "stop" : 1627764372458,
+          "duration" : 19929
+        }
+      }, {
+        "uid" : "f021e9727d7a94ac",
+        "reportUrl" : "https://Bebe-ops.github.io/conduit/26//#testresult/f021e9727d7a94ac",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627760226383,
+          "stop" : 1627760246307,
+          "duration" : 19924
+        }
+      }, {
+        "uid" : "8cb05265d93c4f20",
+        "reportUrl" : "https://Bebe-ops.github.io/conduit/25//#testresult/8cb05265d93c4f20",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627757551123,
+          "stop" : 1627757570979,
+          "duration" : 19856
+        }
+      }, {
+        "uid" : "aa944b8f4d5a0e19",
+        "reportUrl" : "https://Bebe-ops.github.io/conduit/23//#testresult/aa944b8f4d5a0e19",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627669948826,
+          "stop" : 1627669968801,
+          "duration" : 19975
+        }
+      }, {
+        "uid" : "c5eda56664f3d371",
+        "reportUrl" : "https://Bebe-ops.github.io/conduit/22//#testresult/c5eda56664f3d371",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally.\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)",
+        "time" : {
+          "start" : 1627663941662,
+          "stop" : 1627663941662,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "3d78201c512c43f2",
+        "reportUrl" : "https://Bebe-ops.github.io/conduit/21//#testresult/3d78201c512c43f2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627308336866,
+          "stop" : 1627308351246,
+          "duration" : 14380
+        }
+      }, {
+        "uid" : "40eecaf75a6e3c4c",
+        "reportUrl" : "https://Bebe-ops.github.io/conduit/20//#testresult/40eecaf75a6e3c4c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627300015066,
+          "stop" : 1627300029454,
+          "duration" : 14388
+        }
+      }, {
+        "uid" : "8c27ef2257d33c71",
+        "reportUrl" : "https://Bebe-ops.github.io/conduit/18//#testresult/8c27ef2257d33c71",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: Chrome failed to start: exited abnormally.\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)",
+        "time" : {
+          "start" : 1627234730186,
+          "stop" : 1627234730186,
+          "duration" : 0
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "c9fd0920de6a73e4.json",
+  "parameterValues" : [ ]
+}
