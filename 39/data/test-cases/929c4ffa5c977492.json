@@ -1,0 +1,163 @@
+{
+  "uid" : "929c4ffa5c977492",
+  "name" : "test_login_validator2",
+  "fullName" : "testproject.pytests.test_login_validators#test_login_validator2",
+  "historyId" : "2a9512340dab78ab75d1cd95ec6ee37a",
+  "time" : {
+    "start" : 1630943683390,
+    "stop" : 1630943695022,
+    "duration" : 11632
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "testproject.pytests"
+  }, {
+    "name" : "suite",
+    "value" : "test_login_validators"
+  }, {
+    "name" : "host",
+    "value" : "fv-az74-984"
+  }, {
+    "name" : "thread",
+    "value" : "3666-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testproject.pytests.test_login_validators"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 12,
+        "unknown" : 0,
+        "total" : 12
+      },
+      "items" : [ {
+        "uid" : "ed033b7a3c976679",
+        "reportUrl" : "https://Bebe-ops.github.io/conduit/38//#testresult/ed033b7a3c976679",
+        "status" : "passed",
+        "time" : {
+          "start" : 1630942567714,
+          "stop" : 1630942579325,
+          "duration" : 11611
+        }
+      }, {
+        "uid" : "5e671fed309ba910",
+        "reportUrl" : "https://Bebe-ops.github.io/conduit/37//#testresult/5e671fed309ba910",
+        "status" : "passed",
+        "time" : {
+          "start" : 1630941238520,
+          "stop" : 1630941250153,
+          "duration" : 11633
+        }
+      }, {
+        "uid" : "8fc0651ba20348f1",
+        "reportUrl" : "https://Bebe-ops.github.io/conduit/36//#testresult/8fc0651ba20348f1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1630940873242,
+          "stop" : 1630940884915,
+          "duration" : 11673
+        }
+      }, {
+        "uid" : "7292e767415ed31",
+        "reportUrl" : "https://Bebe-ops.github.io/conduit/35//#testresult/7292e767415ed31",
+        "status" : "passed",
+        "time" : {
+          "start" : 1630940779829,
+          "stop" : 1630940791478,
+          "duration" : 11649
+        }
+      }, {
+        "uid" : "1527462922cc301c",
+        "reportUrl" : "https://Bebe-ops.github.io/conduit/34//#testresult/1527462922cc301c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1630939264352,
+          "stop" : 1630939275959,
+          "duration" : 11607
+        }
+      }, {
+        "uid" : "8aa1bda8028f9b83",
+        "reportUrl" : "https://Bebe-ops.github.io/conduit/33//#testresult/8aa1bda8028f9b83",
+        "status" : "passed",
+        "time" : {
+          "start" : 1629211784345,
+          "stop" : 1629211795968,
+          "duration" : 11623
+        }
+      }, {
+        "uid" : "296d16e74e6b8d54",
+        "reportUrl" : "https://Bebe-ops.github.io/conduit/32//#testresult/296d16e74e6b8d54",
+        "status" : "passed",
+        "time" : {
+          "start" : 1629211286220,
+          "stop" : 1629211297796,
+          "duration" : 11576
+        }
+      }, {
+        "uid" : "5ece98948e4bffdf",
+        "reportUrl" : "https://Bebe-ops.github.io/conduit/31//#testresult/5ece98948e4bffdf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627997055742,
+          "stop" : 1627997067372,
+          "duration" : 11630
+        }
+      }, {
+        "uid" : "adab46797e9760ed",
+        "reportUrl" : "https://Bebe-ops.github.io/conduit/29//#testresult/adab46797e9760ed",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627829323018,
+          "stop" : 1627829334514,
+          "duration" : 11496
+        }
+      }, {
+        "uid" : "8664deab9dc80eea",
+        "reportUrl" : "https://Bebe-ops.github.io/conduit/28//#testresult/8664deab9dc80eea",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627828399397,
+          "stop" : 1627828410927,
+          "duration" : 11530
+        }
+      }, {
+        "uid" : "1725988101dc5144",
+        "reportUrl" : "https://Bebe-ops.github.io/conduit/27//#testresult/1725988101dc5144",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627764404149,
+          "stop" : 1627764415823,
+          "duration" : 11674
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "929c4ffa5c977492.json",
+  "parameterValues" : [ ]
+}
